@@ -89,8 +89,20 @@ setTimeout(function() {
   window.scrollTo(0, 0);;
 }, 100);
 
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 200);
+
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 300);
+
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 400);
+
 
 setTimeout(function() {
   disableScroll();
-}, 200);
+}, 1000);
 
