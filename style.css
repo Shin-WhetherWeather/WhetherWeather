@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  align-items: center;
+  width:100%;
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+
+
+
+
+
+
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+  }
+
+  div[style*="margin: 16px 0"] {
+    margin:0 !important;
+}
+
+  .navbar
+  {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+  }
+
+  .navbarElement {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    font-size: 24px;
+    text-align: center;
+    padding: 28px 64px;
+    text-decoration: none;
+    transition: 0.6s;
+  }
+
+  .navbarElement:hover,
+  .navbarElementGroup .material-icons.menuIcon:hover
+  {
+    background: #ddd;
+    color: black;
+  }
+
+  .navbarLogo {
+      float:left;
+      display: block;
+      height: 38px;
+      width:auto;
+      padding: 0px 64px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+  }
+
+  .title    {
+    float:left;
+    padding-left: 200px;
+    padding-right: 12px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    color: #f2f2f2;
+    font-size: 24px;
+    letter-spacing: 8px;
+    transition: 0.6s;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .spacer   {
+    padding:36px;
+    width:100%;
+  }
+
+  .main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+  }
+
+  .responsive   {
+      width: 100%;
+      max-width: 100%;
+      height:auto;
+  }
+
+  .navbarElementGroup .material-icons.menuIcon
+  {
+      display:none;
+  }
+
+
+  @media screen and (max-width: 680px)
+  {
+    .navbar .title{opacity:0; white-space: nowrap; overflow: clip;}
+  }
+
+
+
+  @media screen and (max-width: 1440px)
+  {
+      .navbarElement{display: none;}
+      .material-icons.menuIcon
+      {
+          float: right;
+          display: block;
+      }
+  }
+
+  @media screen and (max-width: 1440px)
+  {
+      .navbar.expand{position: relative;}
+      .navbarElementGroup .material-icons.menuIcon
+      {
+          display:block;
+          position:absolute;
+          right:0;
+          top:0;
+      }
+
+  } 
+  .material-icons.menuIcon {
+    color:white;
+    font-size:64px;
+    float:right;
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 12px 64px;
+    text-decoration: none;
+    transition: 1s;
+
+  }
+  
+
