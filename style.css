@@ -22,6 +22,39 @@ html {
   width:100%;
 }
 
+.block
+{
+  position: absolute; 
+  
+  width: 100%; 
+  background: black; 
+  z-index: 1000; 
+  color:white; 
+  text-align: center; 
+
+  animation-name: fade;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode:both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fade
+{
+  0%{opacity: 1; height: 145%;}
+  99%{opacity: 0; height: 110%;}
+  100%{opacity: 0; height: 0%; display: none;}
+}
+
+.welcomeText  {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 32px;
+}
 
 
 
@@ -183,3 +216,31 @@ body, html {
   }
   
 
+  .subscribeForm  {
+    background-color: #333;
+    padding: 10px 30px;
+    padding-bottom: 30px;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .input, input[type=submit]{
+    width:100%;
+    padding:12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid white;
+    box-sizing: border-box;
+  }
+
+  .submit
+  {
+    background-color:#58ffab;
+    transition: background-color 4s, transform 0.5s;
+  }
+
+  .submit:hover
+  {
+    background-color: #ff6b6b;
+    transform: scale(1.005);
+  }
