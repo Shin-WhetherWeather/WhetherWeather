@@ -74,6 +74,23 @@ setTimeout(function() {
 }, 50);
 
 setTimeout(function() {
-  disableScroll();
+  window.scrollTo(0, 0);;
+}, 60);
+
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 70);
+
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 80);
+
+setTimeout(function() {
+  window.scrollTo(0, 0);;
 }, 100);
+
+
+setTimeout(function() {
+  disableScroll();
+}, 200);
 
