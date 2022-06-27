@@ -108,6 +108,16 @@ body, html {
 }
 
 
+@media only screen and (max-width: 1080px) {
+  body, html
+  {
+    font-size: 2vw;
+  }
+}
+
+
+
+
 .yproximity-scroll-snapping
 {
   box-sizing: border-box;
