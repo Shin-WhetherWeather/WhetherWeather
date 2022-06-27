@@ -256,10 +256,11 @@ body, html {
   @media screen and (max-width: 680px)
   {
     .navbar .title{opacity:0; white-space: nowrap; overflow: clip;}
-    .footer.footerText, .footerText
+    /* .footer.footerText, .footerText, .footer
       {
-        font-size: 10px !important;
-      }
+        font-size: 9px !important;
+        background-color: red;
+      } */
   }
 
 
@@ -272,10 +273,10 @@ body, html {
           float: right;
           display: block;
       }
-      .footer.footerText, .footerText
+      /* .footer.footerText, .footerText, .footer
       {
         font-size: 14px !important;
-      }
+      } */
   }
 
   @media screen and (max-width: 1440px)
@@ -344,5 +345,5 @@ body, html {
 
   .footerText {
     color: #6f7377; 
-    font-size: 18px;
+    font-size: 1.4vw;
   }
