@@ -203,6 +203,8 @@ body, html {
     position: relative;
     text-align: center;
     color: white;
+    padding: 0;
+    margin: 0;
   }
 
   .overlay  {
@@ -213,7 +215,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    font-size: 48px;
+    font-size: 24px;
     opacity: 0;
     transition: 1s;
     transition-delay: 1s;
@@ -224,12 +226,12 @@ body, html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -200%);
+    transform: translate(-50%, -50%);
   }
   
   .overlay.is-inview
   {
-    opacity: 0.6;
+    opacity: 0.75;
     background-color: #000;
     animation: fadeSmall;
     animation-duration: 3s;
@@ -242,8 +244,8 @@ body, html {
 
   @keyframes fadeSmall
   {
-    0%{opacity: 0.6; height: 145%;}
-    100%{opacity: 0; height: 110%; display: none;}
+    0%{opacity: 0.75;}
+    100%{opacity: 0;display: none;}
   }
 
 
