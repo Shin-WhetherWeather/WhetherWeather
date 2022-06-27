@@ -1,6 +1,75 @@
+SmoothScroll({
+  // Scrolling Core
+animationTime    : 1000, // [ms]
+stepSize         : 100, // [px]
 
-window.scrollTo(0, 0);
-window.scrollTo(0, 0);
+// Acceleration
+accelerationDelta : 50,  // 50
+accelerationMax   : 3,   // 3
+
+// Keyboard Settings
+keyboardSupport   : true,  // option
+arrowScroll       : 50,    // [px]
+
+// Pulse (less tweakable)
+// ratio of "tail" to "acceleration"
+pulseAlgorithm   : true,
+pulseScale       : 4,
+pulseNormalize   : 1,
+
+// Other
+touchpadSupport   : false, // ignore touchpad by default
+fixedBackground   : true, 
+excluded          : ''    
+})
+
+
+
+var sections = document.querySelectorAll('.overlay');
+var options = {
+rootMargin: '0px',
+threshold: 0.25
+}
+
+
+var callback = (entries) => 
+{
+  entries.forEach((entry) => 
+  {
+    var target = entry.target;
+      if (entry.intersectionRatio >= 0.1) 
+      {
+        console.log("inview");
+        target.classList.add("is-inview");
+      } 
+      else 
+      {
+        console.log("notinview");
+        target.classList.remove("is-inview");
+      }
+  })
+}
+
+var observer = new IntersectionObserver(callback, options)
+sections.forEach((section, index) => {
+observer.observe(section)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let cover = document.getElementById("block");
 
@@ -69,40 +138,40 @@ function enableScroll() {
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 50);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 50);
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 60);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 60);
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 70);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 70);
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 80);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 80);
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 100);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 100);
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 200);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 200);
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 300);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 300);
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 400);
+// setTimeout(function() {
+//   window.scrollTo(0, 0);;
+// }, 400);
 
 
-setTimeout(function() {
-  disableScroll();
-}, 1000);
+// setTimeout(function() {
+//   disableScroll();
+// }, 1000);
 
