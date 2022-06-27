@@ -16,6 +16,7 @@ html {
 }
 
 [class*="col-"] {
+  position: relative;
   float: left;
   padding: 15px;
   align-items: center;
@@ -32,12 +33,12 @@ html {
   color:white; 
   text-align: center; 
 
-  animation-name: fade;
+  /* animation-name: fade;
   animation-duration: 3s;
   animation-delay: 2s;
   animation-iteration-count: 1;
   animation-fill-mode:both;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out; */
 }
 
 @keyframes fade
@@ -99,6 +100,7 @@ body, html {
     letter-spacing: 1px;
     margin: 0;
     padding: 0;
+    font-size: 1.15vw;
   }
 
   div[style*="margin: 16px 0"] {
@@ -211,6 +213,15 @@ body, html {
   }
 
 
+
+  .caption
+  {
+    position: absolute;
+    left:36px;
+    bottom: 36px;
+    background-color: #FFF;
+    padding: 2px;
+  }
 
   
   .cloud
