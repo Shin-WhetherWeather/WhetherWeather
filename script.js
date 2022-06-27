@@ -27,9 +27,93 @@ excluded          : ''
 
 var sections = document.querySelectorAll('.overlay');
 var options = {
-rootMargin: '0px',
+rootMargin: '-150px',
 threshold: 0.25
 }
+
+
+let navElements = document.querySelectorAll(".navbarElement");
+let logo = document.getElementById("navbarLogo");
+let pageTitle = document.getElementById("pageTitle");
+let navbar = document.getElementById("navbar");
+let menuIcon = document.getElementById("menuIcon");
+
+
+
+let mainBody = document.getElementById('main');
+
+mainBody.addEventListener("scroll", function () {
+  scrollFunction();
+});
+
+
+
+function scrollFunction() {
+
+  navElements.forEach((element) => {
+
+
+
+    switch(true)
+    {
+      case (mainBody.scrollTop > 0 || mainBody.scrollTop > 0) && (mainBody.scrollTop < 100 || mainBody.scrollTop < 100):
+        element.style.opacity = 1;
+        element.style.padding = "28px 64px";
+        logo.style.height = "38px";
+
+
+        pageTitle.style.fontSize = "24px";
+        pageTitle.style.paddingLeft = "200px";
+        pageTitle.style.paddingRight = "12px";
+        pageTitle.style.paddingTop = "28px";
+        pageTitle.style.paddingBottom = "28px";
+        pageTitle.style.letterSpacing = "8px";
+
+        navbar.style.opacity = 1;
+        navbar.style.pointerEvents = "auto";
+
+        menuIcon.style.fontSize = "64px";
+        
+        break;
+
+      case (mainBody.scrollTop > 100 || mainBody.scrollTop > 100) && (mainBody.scrollTop < 200 || mainBody.scrollTop < 200):
+        element.style.opacity = 0;
+        element.style.padding = 0;
+        logo.style.height = "20px";
+
+
+
+        pageTitle.style.fontSize = "18px";
+        pageTitle.style.paddingLeft = "150px";
+        pageTitle.style.paddingRight = "6px";
+        pageTitle.style.paddingTop = "14px";
+        pageTitle.style.paddingBottom = "14px";
+        pageTitle.style.letterSpacing = "2px";
+
+        navbar.style.opacity = 1;
+        navbar.style.pointerEvents = "auto";
+
+        menuIcon.style.fontSize = "32px";
+
+        break;
+
+      case (mainBody.scrollTop > 750 || mainBody.scrollTop > 750):
+
+        navbar.style.opacity = 0;
+        navbar.style.pointerEvents = "none";
+
+        break;
+    }
+
+
+    }
+  );
+  
+
+}
+
+
+
 
 
 var callback = (entries) => 
@@ -44,8 +128,8 @@ var callback = (entries) =>
       } 
       else 
       {
-        console.log("notinview");
-        target.classList.remove("is-inview");
+        //console.log("notinview");
+        //target.classList.remove("is-inview");
       }
   })
 }
@@ -54,6 +138,7 @@ var observer = new IntersectionObserver(callback, options)
 sections.forEach((section, index) => {
 observer.observe(section)
 })
+
 
 
 

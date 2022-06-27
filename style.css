@@ -124,6 +124,7 @@ body, html {
     top: 0; 
     width: 100%;
     z-index: 5;
+    transition: 2s;
   }
 
   .navbarElement {
@@ -134,7 +135,7 @@ body, html {
     text-align: center;
     padding: 28px 64px;
     text-decoration: none;
-    transition: 1s;
+    transition: opacity 1s, padding 2s;
   }
 
   .logoIcon {
@@ -158,6 +159,7 @@ body, html {
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
+      transition: 1s;
   }
 
   .title    {
@@ -254,6 +256,10 @@ body, html {
   @media screen and (max-width: 680px)
   {
     .navbar .title{opacity:0; white-space: nowrap; overflow: clip;}
+    .footer.footerText, .footerText
+      {
+        font-size: 10px !important;
+      }
   }
 
 
@@ -265,6 +271,10 @@ body, html {
       {
           float: right;
           display: block;
+      }
+      .footer.footerText, .footerText
+      {
+        font-size: 14px !important;
       }
   }
 
@@ -334,5 +344,5 @@ body, html {
 
   .footerText {
     color: #6f7377; 
-    font-size: 24px;
+    font-size: 18px;
   }

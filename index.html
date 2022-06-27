@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Roboto:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Roboto:wght@300&display=swap');
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -26,17 +26,16 @@
 <div class = 'block' id = "block">
   <div class = 'welcomeText'>A different way of looking at time.</div>
 </div>
-HELLO
 </head>
 <body>
   
 
 <!-- Links (sit on top) -->
-<div class="navbar">
+<div class="navbar" id = 'navbar'>
     <div>
-        <img class="navbarLogo" src = 'logo.png'>
+        <img id = 'navbarLogo' class="navbarLogo" src = 'logo.png'>
     </div>
-    <div class = 'title'>
+    <div class = 'title' id = 'pageTitle'>
       Whether Weather
     </div>
 
@@ -62,7 +61,7 @@ HELLO
     </div>
 
     <div class = "">
-        <i class = 'material-icons menuIcon'>menu</i>
+        <i class = 'material-icons menuIcon' id = "menuIcon">menu</i>
     </div>
 
   </div>
@@ -74,7 +73,7 @@ HELLO
 
 <!--Page content-->
 
-<div class = 'viewport'>
+<div class = 'viewport' id = 'main'>
 
 <div class = "row">
   <div class = "col-3"></div>
