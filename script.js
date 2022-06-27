@@ -277,40 +277,40 @@ function enableScroll() {
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 50);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 50);
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 60);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 60);
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 70);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 70);
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 80);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 80);
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 100);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 100);
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 200);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 200);
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 300);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 300);
 
-// // setTimeout(function() {
-// //   window.scrollTo(0, 0);;
-// // }, 400);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 400);
 
 
-// // setTimeout(function() {
-// //   disableScroll();
-// // }, 1000);
+setTimeout(function() {
+  disableScroll();
+}, 1000);
 
