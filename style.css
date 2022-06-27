@@ -32,12 +32,12 @@ html {
   color:white; 
   text-align: center; 
 
-  /* animation-name: fade;
+  animation-name: fade;
   animation-duration: 3s;
   animation-delay: 2s;
   animation-iteration-count: 1;
   animation-fill-mode:both;
-  animation-timing-function: ease-in-out; */
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes fade
@@ -82,6 +82,7 @@ html {
   height: 100%;
 
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-snap-type: y;
   scroll-behavior: smooth;
 }
@@ -135,7 +136,7 @@ body, html {
     text-align: center;
     padding: 28px 64px;
     text-decoration: none;
-    transition: opacity 1s, padding 2s;
+    transition: opacity 1s, padding 2s, filter 1s, background 1s;
   }
 
   .logoIcon {
@@ -208,6 +209,88 @@ body, html {
     padding: 0;
     margin: 0;
   }
+
+
+
+  
+  .cloud
+  {
+    position: absolute;
+    z-index: 12;
+    height: 80%;
+    opacity: 1;
+  }
+
+  .cloudShadow
+  {
+    position: absolute;
+    
+    z-index: 1;
+    height: 80%;
+    filter: invert(100%) blur(6px);
+    opacity: 0.2;
+  }
+
+  .iconOverlayR
+  {
+    height:100%;
+    position:absolute;
+    top: 30%;
+    left: 65%;
+    transition: 2s;
+    transition-timing-function: ease-in;
+    z-index: 8;
+  }
+
+  .iconOverlayL
+  {
+    transform: scaleX(-1);
+    height:75%;
+    position:absolute;
+    top: 55%;
+    left: 25%;
+    transition: 2s;
+    transition-timing-function: ease-in;
+  }
+
+
+
+  @media only screen and (max-width: 1440px) {
+    .cloud, .cloudShadow
+    {
+      height: 55%;
+    }
+    .iconOverlayR
+    {
+      left: 55%;
+    }
+    .iconOverlayL
+    {
+      left: 35%;
+    }
+  }
+
+  @media only screen and (max-width: 680px) {
+    .cloud, .cloudShadow
+    {
+      height: 40%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ 
 
   .overlay  {
     height:100%;
@@ -340,10 +423,15 @@ body, html {
     width:100%;
     height:200px;
     background: linear-gradient(#F598A2, #F598A2 25%, #FDD9C1 25%, #FDD9C1 50%, #B8E1D2 50%, #B8E1D2 75%, #C8CFE9 75%, #C8CFE9 100%);
-    padding: 85px;
+    padding: 72px;
   }
 
   .footerText {
     color: #6f7377; 
-    font-size: 1.4vw;
+    font-size: 1.8vw;
+  }
+
+  .sunLogo
+  {
+    font-size: 2.5vw;
   }
