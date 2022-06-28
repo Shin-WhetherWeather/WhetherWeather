@@ -232,7 +232,7 @@ function loaded()
       })
 }
 
-setTimeout(loaded, 600);
+setTimeout(loaded, 1200);
 
 
 
