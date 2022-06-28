@@ -7,6 +7,8 @@ html:focus-within {
 }
 
 html {
+  height:100%;
+  width: 100%;
     background-color: #d3dcdf;
 }
 ::-webkit-scrollbar {
@@ -78,9 +80,11 @@ html {
 
 .viewport 
 {
+  height:100%;
   width: 100%;
 
   overflow-y: visible;
+  overflow-x: clip;
 }
 
 
@@ -103,6 +107,7 @@ html {
 
 
 body, html {
+  height:100%;
     width: 100%;
     font-family: 'Roboto Mono', monospace;
     font-weight: 100;
@@ -330,6 +335,11 @@ body, html {
     .cloud, .cloudShadow
     {
       height: 40%;
+    }
+    .html, .body
+    {
+      width: 100%;
+      overflow-x: hidden;
     }
   }
 
