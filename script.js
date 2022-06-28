@@ -21,6 +21,7 @@ window.translation = {
 var AUTOHIDE = Boolean(0);
 
 
+
 SmoothScroll({
   // Scrolling Core
 animationTime    : 1000, // [ms]
@@ -211,6 +212,13 @@ var callback = (entries) =>
       {
         console.log("inview");
         target.classList.add("is-inview");
+        SmoothScroll({ stepSize: 25, });
+        setTimeout(
+          function()
+          {
+            SmoothScroll({ stepSize: 100, })
+          }
+          ,2000);
       } 
   })
 }
