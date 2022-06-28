@@ -219,15 +219,20 @@ var observer = new IntersectionObserver(callback, options)
 
 let observer2 = new IntersectionObserver(callback, options2)
 
-sections.forEach((section, index) => {
-observer.observe(section)
-})
 
-textSections.forEach((section, index) => {
-  observer2.observe(section)
-  })
-  
+function loaded()
+{
+  console.log("loaded");
+  sections.forEach((section, index) => {
+    observer.observe(section)
+    })
+    
+    textSections.forEach((section, index) => {
+      observer2.observe(section)
+      })
+}
 
+setTimeout(loaded, 600);
 
 
 
