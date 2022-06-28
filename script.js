@@ -106,11 +106,15 @@ function moveCloudsLeft()
 
 
 
+
+
 let navElements = document.querySelectorAll(".navbarElement");
 let logo = document.getElementById("navbarLogo");
 let pageTitle = document.getElementById("pageTitle");
 let navbar = document.getElementById("navbar");
 let menuIcon = document.getElementById("menuIcon");
+
+let logoContainer = document.getElementById("logoContainer");
 
 
 
@@ -118,6 +122,61 @@ let mainBody = document.getElementById('main');
 
 mainBody.addEventListener("scroll", function () {
   scrollFunction();
+});
+
+logo.addEventListener("click", function () {
+  console.log("CLICK");
+  topFunction();
+  scrollFunction();
+});
+
+
+
+window.addEventListener("scroll", function () {
+  scrollFunction();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+logo.addEventListener("click", function()
+{
 });
 
 
@@ -130,10 +189,12 @@ function scrollFunction() {
 
     switch(true)
     {
-      case (mainBody.scrollTop > 0 || mainBody.scrollTop > 0) && (mainBody.scrollTop < 100 || mainBody.scrollTop < 100):
+      case (window.pageYOffset >= 0 || window.pageYOffset >= 0) && (window.pageYOffset < 100 || window.pageYOffset < 100):
         element.style.opacity = 1;
         element.style.padding = "28px 64px";
         logo.style.height = "38px";
+
+        logo.style.pointerEvents = "auto";
 
 
         pageTitle.style.fontSize = "24px";
@@ -143,38 +204,51 @@ function scrollFunction() {
         pageTitle.style.paddingBottom = "28px";
         pageTitle.style.letterSpacing = "8px";
 
-        navbar.style.opacity = 1;
+        pageTitle.style.opacity = 1;
         navbar.style.pointerEvents = "auto";
+        navbar.style.opacity = 1;
 
         menuIcon.style.fontSize = "64px";
         
         break;
 
-      case (mainBody.scrollTop > 100 || mainBody.scrollTop > 100) && (mainBody.scrollTop < 200 || mainBody.scrollTop < 200):
+      case (window.pageYOffset > 100 || window.pageYOffset > 100) && (window.pageYOffset < 200 || window.pageYOffset < 200):
         element.style.opacity = 0;
         element.style.padding = 0;
-        logo.style.height = "20px";
+
+        
+        logo.style.height = "48px";
+        logo.style.pointerEvents = "auto";
+
 
 
 
         pageTitle.style.fontSize = "18px";
-        pageTitle.style.paddingLeft = "150px";
+        pageTitle.style.paddingLeft = "200px";
         pageTitle.style.paddingRight = "6px";
         pageTitle.style.paddingTop = "14px";
         pageTitle.style.paddingBottom = "14px";
         pageTitle.style.letterSpacing = "2px";
 
+        pageTitle.style.opacity = 1;
+
         navbar.style.opacity = 1;
         navbar.style.pointerEvents = "auto";
+        navbar.style.backgroundColor = "transparent";
 
         menuIcon.style.fontSize = "32px";
 
         break;
 
-      case (mainBody.scrollTop > 850 || mainBody.scrollTop > 850):
+      case (window.pageYOffset > 850 || window.pageYOffset > 850):
 
-        navbar.style.opacity = 0;
+        element.style.padding = "28px 64px";
+        logo.style.pointerEvents = "auto";
+
+        pageTitle.style.opacity = 0;
         navbar.style.pointerEvents = "none";
+
+        logo.style.opacity = 1;
 
         break;
     }
@@ -203,6 +277,7 @@ let options2 = {
   }
 
 
+
 var callback = (entries) => 
 {
   entries.forEach((entry) => 
@@ -212,13 +287,6 @@ var callback = (entries) =>
       {
         console.log("inview");
         target.classList.add("is-inview");
-        SmoothScroll({ stepSize: 25, });
-        setTimeout(
-          function()
-          {
-            SmoothScroll({ stepSize: 100, })
-          }
-          ,2000);
       } 
   })
 }
