@@ -187,12 +187,19 @@ function scrollFunction() {
 
 
 
-var sections = document.querySelectorAll('.overlay');
+let sections = document.querySelectorAll('.overlay');
+
 let textSections = document.querySelectorAll('.textSection');
-var options = {
+
+let options = {
 rootMargin: '-150px',
 threshold: 0.25
 }
+
+let options2 = {
+  rootMargin: '-20px',
+  threshold: 0.25
+  }
 
 
 var callback = (entries) => 
@@ -210,12 +217,14 @@ var callback = (entries) =>
 
 var observer = new IntersectionObserver(callback, options)
 
+let observer2 = new IntersectionObserver(callback, options2)
+
 sections.forEach((section, index) => {
 observer.observe(section)
 })
 
 textSections.forEach((section, index) => {
-  observer.observe(section)
+  observer2.observe(section)
   })
   
 
@@ -305,40 +314,40 @@ function enableScroll() {
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 50);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 50);
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 60);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 60);
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 70);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 70);
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 80);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 80);
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 100);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 100);
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 200);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 200);
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 300);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 300);
 
-// setTimeout(function() {
-//   window.scrollTo(0, 0);;
-// }, 400);
+setTimeout(function() {
+  window.scrollTo(0, 0);;
+}, 400);
 
 
-// setTimeout(function() {
-//   disableScroll();
-// }, 1000);
+setTimeout(function() {
+  disableScroll();
+}, 1000);
 

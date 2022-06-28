@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@300&display=swap');
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -132,7 +132,7 @@
 
   <div class = "col-9">
     <div>
-      <img src = "24.png" width="100%">
+      <img src = "24.png" width="100%" style="transform: scaleX(-1);">
       <div class = 'captionR'>
         <p>You paint me a blue sky.</p>
       </div>
@@ -248,8 +248,8 @@
   <div class = "col-3"></div>
 
   <div class = "col-6">
-    <div>
-      Isolated from numbers, sunrise and sunsets can tell time well. 
+    <div class = "textSection">
+      Can we frame our days around sunrise and sunsets?
     </div>
   </div>
   <div class = "col-3"></div>
@@ -301,7 +301,7 @@
   <div class = "col-3"></div>
 
   <div class = "col-6">
-    <div>
+    <div class = "textSection">
       How much does your day change when the weather changes? 
     </div>
   </div>
@@ -452,19 +452,19 @@
 
   #sib-container input:-ms-input-placeholder {
     text-align: left;
-    font-family: "Helvetica", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #c0ccda;
   }
 
   #sib-container input::placeholder {
     text-align: left;
-    font-family: "Helvetica", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #c0ccda;
   }
 
   #sib-container textarea::placeholder {
     text-align: left;
-    font-family: "Helvetica", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #c0ccda;
   }
 </style>
@@ -472,7 +472,7 @@
 <!--  END - We recommend to place the above code in head tag of your website html -->
 
 <!-- START - We recommend to place the below code where you want the form in your website html  -->
-<div class="sib-form subscribeForm" style="text-align: center;
+<div class="sib-form subscribeForm textSection" style="text-align: center;
          background-color: #EFF2F7;                                 ">
   <div id="sib-form-container" class="sib-form-container">
     <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
@@ -516,7 +516,7 @@
             <div class="form__entry entry_block">
               <div class="form__label-row ">
 
-                <div class="entry__field">
+                <div class="entry__field" style = "color: black;">
                   <input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="Name" data-required="true" required />
                 </div>
               </div>
@@ -531,7 +531,7 @@
             <div class="form__entry entry_block">
               <div class="form__label-row ">
 
-                <div class="entry__field">
+                <div class="entry__field" style = "color: black;">
                   <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Email" data-required="true" required />
                 </div>
               </div>
