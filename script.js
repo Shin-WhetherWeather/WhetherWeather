@@ -161,8 +161,10 @@ function toggleMenu()
 
 document.addEventListener("click", function(e)
 {
-  if((menuOpen == false)  &&  e.target.id !== "menuIcon")
+  console.log("close");
+  if(e.target.id !== "menuIcon")
   {
+    
     closeMenu();
   }
   
