@@ -174,7 +174,6 @@ window.addEventListener("scroll", function () {
 
 
 
-
 logo.addEventListener("click", function()
 {
 });
@@ -183,13 +182,30 @@ logo.addEventListener("click", function()
 
 function scrollFunction() {
 
+  let font_spacing1 = "12px";
+  let font_opacity = 1;
+
+  if (window.matchMedia('(max-width: 800px)').matches) 
+  {
+    font_spacing1 = "2px";
+    
+  }
+
+  if (window.matchMedia('(max-width: 600px)').matches) 
+  {
+    font_opacity = 0;
+    
+  }
+
+  
+
   navElements.forEach((element) => {
 
 
 
     switch(true)
     {
-      case (window.pageYOffset >= 0 || window.pageYOffset >= 0) && (window.pageYOffset < 100 || window.pageYOffset < 100):
+      case (window.pageYOffset >= -500 || window.pageYOffset >= -500) && (window.pageYOffset < 100 || window.pageYOffset < 100):
         element.style.opacity = 1;
         element.style.padding = "28px 64px";
         logo.style.height = "38px";
@@ -202,9 +218,9 @@ function scrollFunction() {
         pageTitle.style.paddingRight = "12px";
         pageTitle.style.paddingTop = "28px";
         pageTitle.style.paddingBottom = "28px";
-        pageTitle.style.letterSpacing = "8px";
+        pageTitle.style.letterSpacing = font_spacing1;
 
-        pageTitle.style.opacity = 1;
+        pageTitle.style.opacity = font_opacity;
         navbar.style.pointerEvents = "auto";
         navbar.style.opacity = 1;
 
@@ -226,17 +242,17 @@ function scrollFunction() {
         pageTitle.style.fontSize = "18px";
         pageTitle.style.paddingLeft = "200px";
         pageTitle.style.paddingRight = "6px";
-        pageTitle.style.paddingTop = "14px";
-        pageTitle.style.paddingBottom = "14px";
+        pageTitle.style.paddingTop = "28px";
+        pageTitle.style.paddingBottom = "28px";
         pageTitle.style.letterSpacing = "2px";
 
-        pageTitle.style.opacity = 1;
+        pageTitle.style.opacity = font_opacity;
 
         navbar.style.opacity = 1;
         navbar.style.pointerEvents = "auto";
         navbar.style.backgroundColor = "transparent";
 
-        menuIcon.style.fontSize = "32px";
+        menuIcon.style.fontSize = "64px";
 
         break;
 
