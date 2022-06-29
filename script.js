@@ -118,9 +118,184 @@ let logoContainer = document.getElementById("logoContainer");
 
 
 
+
+
+menuIcon.addEventListener("click", function()
+{
+  toggleMenu();
+});
+
+
+let navSpacers = document.querySelectorAll(".navbarSpacer");
+let navSpacersLarge = document.querySelectorAll(".navbarSpacerLarge");
+let iconContainer = document.querySelectorAll(".iconContainer");
+
+let verticalSpacer = document.getElementById("verticalSpacer");
+
+let menuOpen = false;
+
+let menuWidth = menuIcon.offsetWidth;
+let menuHeight = menuIcon.offsetHeight;
+
+
+function toggleMenu()
+{
+  console.log("click");
+  
+    if(menuOpen == false)
+    {
+      openMenu();
+      
+
+    }
+    else if((menuOpen == true))
+    {
+    closeMenu();
+    
+  
+}
+}
+
+function openMenu()
+{
+
+
+navSpacers.forEach((element) =>
+{
+  element.style.width = "0%";
+});
+
+navSpacersLarge.forEach((element) =>
+{
+  element.style.width = "100%";
+});
+
+
+  navElements.forEach((element) => 
+  {
+    element.style.marginLeft = "auto";
+    element.style.marginRight = 0;
+    element.style.opacity = 1;
+    element.style.display = "block";
+    element.style.float = "none";
+    element.style.pointerEvents = "auto";
+    element.style.padding = "12px 64px";
+    element.style.width = "200px";
+
+    
+  });
+
+  verticalSpacer.style.height = menuHeight + 12 + "px";
+
+  menuIcon.style.display = "block";
+  menuIcon.style.float = "none";
+  menuIcon.style.marginLeft = "auto";
+  menuIcon.style.marginRight = 0;
+
+  menuOpen = true;
+
+
+  iconContainer.forEach((element) =>
+  {
+    element.style.marginLeft = "auto";
+    element.style.marginRight = 0;
+    element.style.display = "block";
+    element.style.float = "none";
+  });
+
+
+
+
+
+}
+
+function closeMenu()
+{
+
+  navSpacers.forEach((element) =>
+{
+  element.style.width = "0%";
+});
+
+navSpacersLarge.forEach((element) =>
+{
+  element.style.width = "0%";
+});
+
+
+  navElements.forEach((element) => 
+  {
+    element.style.display = "";
+    element.style.width = "";
+    element.style.float = "";
+    element.style.pointerEvents = "";
+    element.style.padding = "";
+  });
+
+  verticalSpacer.style.height = 0;
+
+  menuIcon.style.display = "";
+  menuIcon.style.float = "";
+  menuIcon.style.marginLeft = "";
+  menuIcon.style.marginRight = "";
+
+
+
+  menuOpen = false;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let mainBody = document.getElementById('main');
 
 mainBody.addEventListener("scroll", function () {
+  scrollFunction();
+});
+
+document.addEventListener("scroll", function(){
   scrollFunction();
 });
 
@@ -132,55 +307,13 @@ logo.addEventListener("click", function () {
 
 
 
-window.addEventListener("scroll", function () {
-  scrollFunction();
-});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-logo.addEventListener("click", function()
-{
-});
 
 
 
 function scrollFunction() {
+  closeMenu();
+  menuOpen = false;
 
   let font_spacing1 = "12px";
   let font_opacity = 1;
@@ -210,6 +343,8 @@ function scrollFunction() {
         element.style.padding = "28px 64px";
         logo.style.height = "38px";
 
+        element.style.pointerEvents = "auto";
+
         logo.style.pointerEvents = "auto";
 
 
@@ -225,12 +360,14 @@ function scrollFunction() {
         navbar.style.opacity = 1;
 
         menuIcon.style.fontSize = "64px";
+        menuIcon.style.pointerEvents = "auto";
         
         break;
 
       case (window.pageYOffset > 100 || window.pageYOffset > 100) && (window.pageYOffset < 200 || window.pageYOffset < 200):
         element.style.opacity = 0;
         element.style.padding = 0;
+        element.style.pointerEvents = "none";
 
         
         logo.style.height = "48px";
@@ -253,18 +390,21 @@ function scrollFunction() {
         navbar.style.backgroundColor = "transparent";
 
         menuIcon.style.fontSize = "64px";
+        menuIcon.style.pointerEvents = "auto";
 
         break;
 
       case (window.pageYOffset > 850 || window.pageYOffset > 850):
 
-        element.style.padding = "28px 64px";
+        element.style.padding = "64px 64px";
         logo.style.pointerEvents = "auto";
 
         pageTitle.style.opacity = 0;
         navbar.style.pointerEvents = "none";
 
         logo.style.opacity = 1;
+
+        menuIcon.style.pointerEvents = "auto";
 
         break;
     }

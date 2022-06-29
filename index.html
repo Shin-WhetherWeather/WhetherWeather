@@ -7,7 +7,7 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;900&display=swap');
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -53,24 +53,34 @@
 
   <div class="navbarElementGroup">
 
-    <div class="">
+    <div class = "">
+        <i class = 'material-icons menuIcon' id = "menuIcon">menu</i>
+    </div>
+
+    <div id = "verticalSpacer"></div>
+    
+
+
+    <div class="iconContainer">
       <a href="https://www.instagram.com/whe_wea/" target="_blank" rel="noopener noreferrer" class="navbarElement">
         <img src="Instagram_Glyph_White.svg" height="27" alt="Instagram" class = "logoIcon">
     </a>
     </div>
-    <div class="">
+
+
+    <div class="iconContainer">
       <a href="https://www.facebook.com/WhetherWeatherCloud/" target="_blank" rel="noopener noreferrer" class="navbarElement">
         <img src="Facebook_logo.svg" height="27" alt="Facebook" class = "logoIcon">
-    </a>
-    </div>
-    <div class="">
-      <a href="https://twitter.com/whe_wea" target="_blank" rel="noopener noreferrer" class="navbarElement">
-        <img src="Twitter_logo.svg" height="27" alt="Twitter" class = "logoIcon">
-    </a>
+      </a>
     </div>
 
-    <div class = "">
-        <i class = 'material-icons menuIcon' id = "menuIcon">menu</i>
+
+
+
+    <div class="iconContainer">
+      <a href="https://twitter.com/whe_wea" target="_blank" rel="noopener noreferrer" class="navbarElement">
+        <img src="Twitter_logo.svg" height="27" alt="Twitter" class = "logoIcon">
+      </a>
     </div>
 
   </div>
@@ -85,21 +95,8 @@
 <div class = 'viewport' id = 'main'>
 
 
-  <div id = "mainTop" class = "spacer"></div>
-  <div class = "spacer"></div>
+  <div id = "mainTop"></div>
 
-
-  <div class = "row">
-
-    <div class = "col-2"></div>
-  
-    <div class = "col-8">
-      <div>
-        A clock to feel time.
-      </div>
-    </div>
-    <div class = "col-2"></div>
-  </div>
 
 
 
@@ -111,10 +108,14 @@
     <div class = "col-8">
       <div>
         <img src = "2222.png" width="100%">
+        <div class = 'captionL'>
+          <p>A clock to feel time.</p>
+        </div>
       </div>
     </div>
     <div class = "col-2"></div>
   </div>
+
 
   <div class = "spacer"></div>
   <div class = "spacer"></div>

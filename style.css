@@ -24,6 +24,15 @@ html {
   width:100%;
 }
 
+.navbarSpacer, .navbarSpacerLarge
+{
+  position: relative;
+  float: right;
+  padding: 15px;
+  align-items: center;
+  width:0%;
+}
+
 .block
 {
   position: fixed; 
@@ -179,6 +188,7 @@ body, html {
   {
     filter: invert(100%);
     background: #000;
+    pointer-events: auto;
   }
 
 
@@ -189,8 +199,8 @@ body, html {
       width:auto;
       padding: 0px 64px;
       position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
+      top: 24px;
+      left: 0;
       transition: 1s;
       cursor: pointer;
   }
@@ -256,6 +266,7 @@ body, html {
     padding: 0;
     margin: 0;
   }
+
 
 
 
@@ -448,7 +459,8 @@ body, html {
       .navbarElement{display: none;}
       .material-icons.menuIcon
       {
-          float: right;
+        margin-left: auto;
+        margin-right: 0;
           display: block;
       }
       /* .footer.footerText, .footerText, .footer
@@ -463,7 +475,9 @@ body, html {
       .navbarElementGroup .material-icons.menuIcon
       {
           display:block;
-          position:absolute;
+          margin-left: auto;
+          position: absolute;
+          margin-right: 0;
           right:0;
           top:0;
       }
@@ -472,8 +486,6 @@ body, html {
   .material-icons.menuIcon {
     color:white;
     font-size:64px;
-    float:right;
-    float: right;
     display: block;
     color: #f2f2f2;
     text-align: center;
