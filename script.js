@@ -21,6 +21,11 @@ window.translation = {
 var AUTOHIDE = Boolean(0);
 
 
+window.onload = function()
+{
+  scrollFunction();
+};
+
 
 SmoothScroll({
   // Scrolling Core
@@ -279,27 +284,6 @@ navSpacersLarge.forEach((element) =>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let mainBody = document.getElementById('main');
 
 mainBody.addEventListener("scroll", function () {
@@ -327,11 +311,13 @@ function scrollFunction() {
   menuOpen = false;
 
   let font_spacing1 = "12px";
+  let font_spacing2 = "4px";
   let font_opacity = 1;
 
   if (window.matchMedia('(max-width: 800px)').matches) 
   {
     font_spacing1 = "2px";
+    font_spacing2 = "2px";
     
   }
 
@@ -375,24 +361,24 @@ function scrollFunction() {
         
         break;
 
-      case (window.pageYOffset > 100 || window.pageYOffset > 100) && (window.pageYOffset < 200 || window.pageYOffset < 200):
+      case (window.pageYOffset > 100 || window.pageYOffset > 100) && (window.pageYOffset < 1450 || window.pageYOffset < 1450):
         element.style.opacity = 0;
         element.style.padding = 0;
         element.style.pointerEvents = "none";
 
         
-        logo.style.height = "48px";
+        logo.style.height = "42px";
         logo.style.pointerEvents = "auto";
 
 
 
 
-        pageTitle.style.fontSize = "18px";
+        pageTitle.style.fontSize = "24px";
         pageTitle.style.paddingLeft = "200px";
         pageTitle.style.paddingRight = "6px";
         pageTitle.style.paddingTop = "28px";
         pageTitle.style.paddingBottom = "28px";
-        pageTitle.style.letterSpacing = "2px";
+        pageTitle.style.letterSpacing = font_spacing2;
 
         pageTitle.style.opacity = font_opacity;
 
@@ -405,7 +391,7 @@ function scrollFunction() {
 
         break;
 
-      case (window.pageYOffset > 850 || window.pageYOffset > 850):
+      case (window.pageYOffset > 1450 || window.pageYOffset > 1450):
 
         element.style.padding = "64px 64px";
         logo.style.pointerEvents = "auto";
