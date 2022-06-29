@@ -176,7 +176,7 @@ body, html {
     text-align: center;
     padding: 28px 64px;
     text-decoration: none;
-    transition: opacity 1s, padding 2s, filter 1s, background 1s;
+    transition: opacity 1s, padding 2s, filter 1s, background 1s, transform 1s;
   }
 
   .logoIcon {
@@ -189,6 +189,7 @@ body, html {
     filter: invert(100%);
     background: #000;
     pointer-events: auto;
+    transform: scale(1.05);
   }
 
 
@@ -203,12 +204,15 @@ body, html {
       left: 0;
       transition: 1s;
       cursor: pointer;
+      z-index: 8;
   }
 
   .navbarLogo:hover
   {
     filter: brightness(1.75);
+    transform: scale(1.4);
   }
+
 
   .title    {
     float:left;

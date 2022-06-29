@@ -119,9 +119,9 @@ let pageTitle = document.getElementById("pageTitle");
 let navbar = document.getElementById("navbar");
 let menuIcon = document.getElementById("menuIcon");
 
+let backdrop = document.getElementById("backdrop");
+
 let logoContainer = document.getElementById("logoContainer");
-
-
 
 
 
