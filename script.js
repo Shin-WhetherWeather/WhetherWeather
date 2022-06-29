@@ -140,7 +140,6 @@ let menuHeight = menuIcon.offsetHeight;
 
 function toggleMenu()
 {
-  console.log("click");
   
     if(menuOpen == false)
     {
@@ -151,10 +150,22 @@ function toggleMenu()
     else if((menuOpen == true))
     {
     closeMenu();
-    
+}
+}
+
+
+document.addEventListener("click", function(e)
+{
+  if((menuOpen == false)  &&  e.target.id !== "menuIcon")
+  {
+    closeMenu();
+  }
   
-}
-}
+});
+
+
+
+
 
 function openMenu()
 {
