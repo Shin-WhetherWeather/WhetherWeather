@@ -21,10 +21,101 @@ window.translation = {
 var AUTOHIDE = Boolean(0);
 
 
+
+
+
+
+
+
+
 window.onload = function()
 {
-  scrollFunction();
+  topFunction();
+
+
+  cloudOverlayR.addEventListener("mouseover", 
+    function()
+    {
+      moveAllClouds();
+    }
+    );
+
+  cloudOverlayL.addEventListener("mouseover", 
+    function()
+    {
+      moveAllClouds();
+    }
+    );
+
+
+setTimeout(loaded, 1200);
+
+
+
+
 };
+
+
+
+let cover = document.getElementById("block");
+
+
+const LOCAL_KEY = "WhetherWeatherKey";
+
+let LOCAL_TOKEN = JSON.parse(localStorage.getItem(LOCAL_KEY));
+
+const now = new Date();
+
+
+if(LOCAL_TOKEN == null || now.getTime() > LOCAL_TOKEN.expiry)   //token doesn't exist or token has expired
+{
+  localStorage.removeItem(LOCAL_KEY);
+
+  LOCAL_TOKEN = 
+  {
+    expiry: now.getTime() + 28800000,  //8 hours
+  }
+
+  localStorage.setItem(LOCAL_KEY, JSON.stringify(LOCAL_TOKEN));
+
+
+  // show blocker
+  document.documentElement.style.setProperty("--myOpacity", 1);
+
+}else
+{
+  cover.remove();
+  enableScroll();  
+  enableScroll();
+  enableScroll();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 SmoothScroll({
@@ -60,19 +151,7 @@ excluded          : ''
 let cloudOverlayR = document.getElementById("cloudOverlayR");
 let cloudOverlayL = document.getElementById("cloudOverlayL");
 
-cloudOverlayR.addEventListener("mouseover", 
-function()
-{
-  moveAllClouds();
-}
-);
 
-cloudOverlayL.addEventListener("mouseover", 
-function()
-{
-  moveAllClouds();
-}
-);
 
 function noop(){};
 
@@ -297,7 +376,6 @@ document.addEventListener("scroll", function(){
 });
 
 logo.addEventListener("click", function () {
-  console.log("CLICK");
   topFunction();
   scrollFunction();
 });
@@ -310,7 +388,6 @@ logo.addEventListener("click", function () {
 
 function scrollFunction() {
   closeMenu();
-  menuOpen = false;
 
   let font_spacing1 = "12px";
   let font_spacing2 = "4px";
@@ -337,7 +414,7 @@ function scrollFunction() {
 
     switch(true)
     {
-      case (window.pageYOffset >= -500 || window.pageYOffset >= -500) && (window.pageYOffset < 100 || window.pageYOffset < 100):
+      case (window.pageYOffset >= -500 || window.pageYOffset >= -500) && (window.pageYOffset < 200 || window.pageYOffset < 200):
         element.style.opacity = 1;
         element.style.padding = "28px 64px";
         logo.style.height = "38px";
@@ -363,7 +440,7 @@ function scrollFunction() {
         
         break;
 
-      case (window.pageYOffset > 100 || window.pageYOffset > 100) && (window.pageYOffset < 1450 || window.pageYOffset < 1450):
+      case (window.pageYOffset >= 200 || window.pageYOffset >= 200) && (window.pageYOffset < 1450 || window.pageYOffset < 1450):
         element.style.opacity = 0;
         element.style.padding = 0;
         element.style.pointerEvents = "none";
@@ -393,7 +470,7 @@ function scrollFunction() {
 
         break;
 
-      case (window.pageYOffset > 1450 || window.pageYOffset > 1450):
+      case (window.pageYOffset >= 1450 || window.pageYOffset >= 1450):
 
         element.style.padding = "64px 64px";
         logo.style.pointerEvents = "auto";
@@ -463,7 +540,6 @@ function loaded()
       })
 }
 
-setTimeout(loaded, 1200);
 
 
 
@@ -481,7 +557,8 @@ setTimeout(loaded, 1200);
 
 
 
-let cover = document.getElementById("block");
+
+
 
 
 
@@ -550,40 +627,4 @@ function enableScroll() {
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 50);
-
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 60);
-
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 70);
-
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 80);
-
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 100);
-
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 200);
-
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 300);
-
-setTimeout(function() {
-  window.scrollTo(0, 0);;
-}, 400);
-
-
-setTimeout(function() {
-  disableScroll();
-}, 1000);
 

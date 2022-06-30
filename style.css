@@ -1,3 +1,9 @@
+:root
+{
+  --myOpacity: 0;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -53,7 +59,7 @@ html {
 
 @keyframes fade
 {
-  0%{opacity: 1; height: 155%;}
+  0%{opacity: var(--myOpacity); height: 155%;}
   99%{opacity: 0; height: 105%;}
   100%{opacity: 0; height: 0%; display: none;}
 }
@@ -189,7 +195,6 @@ body, html {
     filter: invert(100%);
     background: #000;
     pointer-events: auto;
-    transform: scale(1.05);
   }
 
 
@@ -210,7 +215,7 @@ body, html {
   .navbarLogo:hover
   {
     filter: brightness(1.75);
-    transform: scale(1.4);
+    transform: scale(1.3);
   }
 
 
