@@ -567,14 +567,9 @@ const resizewatcher=new ResizeObserver(entries => {
 
     if(entry.contentRect.height == 0)
     {
-      console.log("hello");
-      enableScroll();
       cover.remove();
-      enableScroll();
-      enableScroll();
     }
 
-    //console.log("Element",entry.target, (entry.contentRect.height == 0) ? "is now hidden" : "is now visible")
   }
 })
 

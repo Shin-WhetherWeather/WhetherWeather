@@ -182,7 +182,7 @@ body, html {
     text-align: center;
     padding: 28px 64px;
     text-decoration: none;
-    transition: opacity 1s, padding 2s, filter 1s, background 1s, transform 1s, display 1s;
+    transition: opacity 2s, padding 1.5s, filter 1s, background 1s, transform 1s, display 1s;
   }
 
   .logoIcon {
