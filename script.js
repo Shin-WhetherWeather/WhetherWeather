@@ -121,7 +121,7 @@ function cloudButtonToggle()
 
 function changeWeather()
 {
-  sprite.style.backgroundImage =  "url(Sprites/" + weatherLinks[buttonState] +"), url(Sprites/SpriteMain.png)";
+  sprite.style.backgroundImage =  "url(Sprites/" + weatherLinks[buttonState] +"), url(Sprites/SpriteMain.jpg)";
 }
 
 
