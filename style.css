@@ -537,10 +537,11 @@ user-select: none; /* Standard */
       width: calc(4.2vw*(42/24));
     }
 
-    .tickText
+    .tickContainer
     {
-      opacity: 0;
+      display: none;
     }
+
     
   }
 
