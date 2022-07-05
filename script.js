@@ -23,6 +23,160 @@ var AUTOHIDE = Boolean(0);
 
 
 
+let sprite = document.getElementById("sprite");
+let sliderInput = document.getElementById("slider");
+
+let tickEach = document.getElementById("tickTexts").children;
+
+
+sliderInput.oninput = function()
+{
+  updateSlider();
+};
+
+function updateSlider()
+{
+  sprite.style.backgroundPosition = 2400 + 1300 - 100 * sliderInput.value + "% 0%";
+
+  for(let i = 0; i < tickEach.length; i++)
+  {
+    tickEach[i].classList.remove("tickSelected");
+    if(sliderInput.value == i)
+    {
+      tickEach[i].classList.add("tickSelected");
+    }
+  }
+};
+
+
+function sliderSlide()
+{
+  setTimeout(
+    function()
+    {
+      if(sliderInput.value != 23)
+      {
+        sliderInput.value++;
+      }
+      else
+      {
+        sliderInput.value = 0;
+      }
+      sliderSlide();
+      updateSlider();
+    },250
+  );
+}
+
+
+
+
+
+
+
+let buttonLinks = 
+[
+  "Cloud.svg",
+  "lightning.svg",
+  "Rain.svg",
+  "RainLightning.svg",
+  "Snow.svg",
+  "Sun.svg"
+];
+
+let weatherLinks = 
+[
+  "CloudStill.png",
+  "LightningStill.png",
+  "RainStill.png",
+  "ThunderStill.png",
+  "SnowStill.png",
+  ""
+]
+
+let buttonState = 5;
+
+
+let cloudButton = document.getElementById("cloudButton");
+
+cloudButton.addEventListener("click",function()
+{
+  cloudButtonToggle();
+  changeWeather();
+});
+
+function cloudButtonToggle()
+{
+  if(buttonState == 5)
+  {
+    buttonState = 0;
+  }
+  else
+  {
+    buttonState++;
+  }
+
+  cloudButton.src = "CloudButton/" + buttonLinks[buttonState];
+}
+
+function changeWeather()
+{
+  sprite.style.backgroundImage =  "url(Sprites/" + weatherLinks[buttonState] +"), url(Sprites/SpriteMain.png)";
+}
+
+
+
+let playButton = document.getElementById("playButton");
+
+let animID;
+let playState = false;
+
+let animTime, then, elapsed;
+
+playButton.addEventListener("click", function(){
+  if(playState)
+  {
+    pauseAnimation();
+  }else
+  {
+    animTime = Date.now();
+    playAnimation();
+  }
+});
+
+function playAnimation()
+{
+  animID = requestAnimationFrame(playAnimation);
+
+  playButton.src = "Icons/Pause.svg";
+
+  if( (Date.now() - animTime) > 450)
+  {
+    if(sliderInput.value != 23)
+    {
+      sliderInput.value++;
+    }
+    else
+    {
+      sliderInput.value = 0;
+    }
+  updateSlider();
+
+  animTime = Date.now();
+  playState = true;
+  }
+
+
+}
+
+function pauseAnimation()
+{
+  playButton.src = "Icons/Play.svg";
+  cancelAnimationFrame(animID);
+  playState = false;
+}
+
+
 
 
 
@@ -31,6 +185,7 @@ var AUTOHIDE = Boolean(0);
 window.onload = function()
 {
   topFunction();
+  updateSlider()
 
 
   cloudOverlayR.addEventListener("mouseover", 
