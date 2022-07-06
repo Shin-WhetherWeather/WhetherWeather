@@ -688,7 +688,7 @@ function scrollFunction() {
         pageTitle.style.opacity = font_opacity;
 
         navbar.style.opacity = 1;
-        navbar.style.pointerEvents = "auto";
+        navbar.style.pointerEvents = "none";
         navbar.style.backgroundColor = "transparent";
 
         menuIcon.style.fontSize = "64px";

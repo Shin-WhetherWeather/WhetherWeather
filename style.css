@@ -64,59 +64,12 @@ html {
 
 
 
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
-}
-
-@media only screen and (max-width:768px)
-{
-  .noMobile
-  {
-    display: none;
-  }
-}
-
-@media only screen and (max-width:1080px)
-{
-  .narrowScreen
-  {
-    display: none;
-  }
-
-  .narrowScreenMiddle
-  {
-    width: 100%;
-  }
-}
-
 
 .viewport 
 {
   height:100%;
   width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -142,13 +95,6 @@ body, html {
     margin:0 !important;
 }
 
-
-@media only screen and (max-width: 1080px) {
-  body, html
-  {
-    font-size: 3.5vw;
-  }
-}
 
 
 
@@ -234,12 +180,6 @@ body, html {
     font-weight: 100;
   }
 
-  @media only screen and (max-width: 800px) {
-    .title
-    {
-      letter-spacing: 2px;
-    }
-  }
 
 
   .row::after {
@@ -453,33 +393,6 @@ body, html {
 user-select: none; /* Standard */
   }
 
-  @media only screen and (max-width:1080px)
-  {
-    .tickContainerLeft, .tickContainerRight
-    {
-      display: none;
-    }
-
-    .tickContainer
-    {
-      width: 100%;
-    }
-
-    #slider
-    {
-      width: 98.5%;
-    }
-
-    #playButton
-    {
-      height: 12vw;
-    }
-
-    #cloudButton
-    {
-      height:12vw;
-    }
-  }
 
   .ticks
   {
@@ -506,25 +419,6 @@ user-select: none; /* Standard */
   }
 
 
-  @media only screen and (max-width: 768px){
-    #slider::-webkit-slider-thumb {
-      height: 4.2vw;
-      width: calc(4.2vw*(42/24));
-    }
-  
-    #slider::-moz-range-thumb {
-      height: 4.2vw;
-      width: calc(4.2vw*(42/24));
-    }
-
-    .tickContainer
-    {
-      display: none;
-    }
-
-    
-  }
-
   .captionL, .captionR
   {
     position: absolute;
@@ -533,6 +427,7 @@ user-select: none; /* Standard */
     padding-left: 15px;
     padding-right: 15px;
     color: white;
+    font-size: 1vw
   }
 
   .captionL
@@ -549,7 +444,9 @@ user-select: none; /* Standard */
 
   .cloudContainer
   {
-    overflow: hidden;
+    padding-bottom: 3%;
+    overflow-x: hidden;
+    overflow-y: hidden;
     max-width: 100%;
     position: relative;
   }
@@ -576,7 +473,7 @@ user-select: none; /* Standard */
   {
     height:100%;
     position:absolute;
-    top: 30%;
+    top: 24%;
     left: 65%;
     transition: 2s;
     transition-timing-function: ease-in;
@@ -588,62 +485,13 @@ user-select: none; /* Standard */
     transform: scaleX(-1);
     height:75%;
     position:absolute;
-    top: 55%;
+    top: 50%;
     left: 25%;
     transition: 2s;
     transition-timing-function: ease-in;
   }
 
-  /* @media only screen and (max-width: 1080px)
-  {
-    .iconOverlayR, .iconOverlayL
-    {
-      display:none;
-      cursor: none;
-      overflow: clip;
-    }
-  } */
 
-
-
-  @media only screen and (max-width: 1440px) {
-    .cloud, .cloudShadow
-    {
-      height: 55%;
-    }
-    .iconOverlayR
-    {
-      left: 55%;
-    }
-    .iconOverlayL
-    {
-      left: 35%;
-    }
-  }
-
-  @media only screen and (max-width: 680px) {
-    .cloud, .cloudShadow
-    {
-      height: 40%;
-    }
-    .html, .body
-    {
-      width: 100%;
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
  
 
@@ -714,50 +562,6 @@ user-select: none; /* Standard */
 
 
 
-
-
-
-  @media screen and (max-width: 680px)
-  {
-    .navbar .title
-    {
-      opacity:0; 
-      white-space: nowrap; 
-      max-width: 100%;
-    }
-  }
-
-
-
-  @media screen and (max-width: 1440px)
-  {
-      .navbarElement{display: none;}
-      .material-icons.menuIcon
-      {
-        margin-left: auto;
-        margin-right: 0;
-          display: block;
-      }
-      /* .footer.footerText, .footerText, .footer
-      {
-        font-size: 14px !important;
-      } */
-  }
-
-  @media screen and (max-width: 1440px)
-  {
-      .navbar.expand{position: relative;}
-      .navbarElementGroup .material-icons.menuIcon
-      {
-          display:block;
-          margin-left: auto;
-          position: absolute;
-          margin-right: 0;
-          right:0;
-          top:0;
-      }
-
-  } 
   .material-icons.menuIcon {
     color:white;
     font-size:64px;
@@ -817,3 +621,194 @@ user-select: none; /* Standard */
   {
     font-size: 2.5vw;
   }
+
+
+
+  /* MEDIA */
+
+  @media only screen and (min-width: 1080px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
+
+
+
+  /*
+  ###################################################
+  ##################     MOBILE     #################
+  ###################################################
+  */
+
+  @media only screen and (max-width:768px)
+{
+  .noMobile
+  {
+    display: none;
+  }
+
+  .title
+  {
+    letter-spacing: 2px;
+  }
+
+  #slider::-webkit-slider-thumb {
+    height: 4.2vw;
+    width: calc(4.2vw*(42/24));
+  }
+
+  #slider::-moz-range-thumb {
+    height: 4.2vw;
+    width: calc(4.2vw*(42/24));
+  }
+
+  .tickContainer
+  {
+    display: none;
+  }
+
+  .captionL, .captionR
+  {
+    font-size: 3.5vw;
+  }
+}
+
+  /*
+  ###################################################
+  #############     NARROW SCREEN     ###############
+  ###################################################
+  */
+
+
+
+@media only screen and (max-width:1080px)
+{
+  .narrowScreen
+  {
+    display: none;
+  }
+
+  .narrowScreenMiddle
+  {
+    width: 100%;
+  }
+
+  body, html
+  {
+    font-size: 3.5vw;
+  }
+
+
+
+  .tickContainerLeft, .tickContainerRight
+    {
+      display: none;
+    }
+
+    .tickContainer
+    {
+      width: 100%;
+    }
+
+    #slider
+    {
+      width: 98.5%;
+    }
+
+    #playButton
+    {
+      height: 12vw;
+    }
+
+    #cloudButton
+    {
+      height:12vw;
+    }
+}
+
+
+  /*
+  ###################################################
+  ###############    WIDE SCREEN     ################
+  ###################################################
+  */
+
+
+@media only screen and (max-width: 1440px) {
+  .cloud, .cloudShadow
+    {
+      height: 55%;
+    }
+
+
+  .iconOverlayR
+    {
+      left: 55%;
+    }
+
+
+  .iconOverlayL
+    {
+      left: 35%;
+    }
+
+    
+  .navbarElement{display: none;}
+  .material-icons.menuIcon
+    {
+      margin-left: auto;
+      margin-right: 0;
+        display: block;
+    }
+
+
+  .navbar.expand{position: relative;}
+  .navbarElementGroup .material-icons.menuIcon
+    {
+        display:block;
+        margin-left: auto;
+        position: absolute;
+        margin-right: 0;
+        right:0;
+        top:0;
+    }
+}
+
+
+  /*
+  ###################################################
+  ###############    MOBILE NARROW     ##############
+  ###################################################
+  */
+
+
+@media only screen and (max-width: 680px) {
+  .cloud, .cloudShadow
+    {
+      height: 40%;
+    }
+
+
+  .html, .body
+    {
+      width: 100%;
+    }
+
+
+  .navbar .title
+    {
+      opacity:0; 
+      white-space: nowrap; 
+      max-width: 100%;
+    }
+}
