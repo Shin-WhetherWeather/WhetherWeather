@@ -339,6 +339,7 @@ function moveCloudsRight()
   cloudOverlayR.style.left = "1000px";
   console.log(parseInt(cloudOverlayR.style.left));
   cloudOverlayR.style.opacity = 0;
+
 }
 
 function moveCloudsLeft()
@@ -348,6 +349,7 @@ function moveCloudsLeft()
   cloudOverlayL.style.left = "-1000px";
   console.log(parseInt(cloudOverlayR.style.left));
   cloudOverlayL.style.opacity = 0;
+
 }
 
 

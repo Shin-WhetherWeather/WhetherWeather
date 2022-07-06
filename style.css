@@ -106,7 +106,6 @@ html {
 {
   height:100%;
   width: 100%;
-
 }
 
 
@@ -137,10 +136,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-size: 1.5vw;
-    
-    
   }
-
 
   div[style*="margin: 16px 0"] {
     margin:0 !important;
@@ -551,6 +547,12 @@ user-select: none; /* Standard */
     bottom: 36px;
   }
 
+  .cloudContainer
+  {
+    overflow: hidden;
+    max-width: 100%;
+    position: relative;
+  }
   
   .cloud
   {
@@ -592,14 +594,15 @@ user-select: none; /* Standard */
     transition-timing-function: ease-in;
   }
 
-  @media only screen and (max-width: 1080px)
+  /* @media only screen and (max-width: 1080px)
   {
     .iconOverlayR, .iconOverlayL
     {
       display:none;
       cursor: none;
+      overflow: clip;
     }
-  }
+  } */
 
 
 
