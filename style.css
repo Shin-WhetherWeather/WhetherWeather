@@ -598,6 +598,15 @@ user-select: none; /* Standard */
     transition-timing-function: ease-in;
   }
 
+  @media only screen and (max-width: 400px)
+  {
+    .iconOverlayR, .iconOverlayL
+    {
+      display:none;
+      cursor: none;
+    }
+  }
+
 
 
   @media only screen and (max-width: 1440px) {
