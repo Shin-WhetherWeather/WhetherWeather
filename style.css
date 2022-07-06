@@ -8,9 +8,6 @@
   box-sizing: border-box;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
 
 html {
   height:100%;
@@ -110,8 +107,6 @@ html {
   height:100%;
   width: 100%;
 
-  overflow-y: scroll;
-  overflow-x: clip;
 }
 
 
@@ -142,10 +137,10 @@ body, html {
     margin: 0;
     padding: 0;
     font-size: 1.5vw;
-    overflow: hidden;
-    overflow-y: auto;
+    
     
   }
+
 
   div[style*="margin: 16px 0"] {
     margin:0 !important;
@@ -175,7 +170,6 @@ body, html {
 
   .navbar
   {
-    overflow: hidden;
     background-color: #1f273500;
     /* background-color: #1f2735; */
     position: fixed; 
@@ -632,7 +626,6 @@ user-select: none; /* Standard */
     .html, .body
     {
       width: 100%;
-      overflow-x: hidden;
     }
   }
 
@@ -727,7 +720,6 @@ user-select: none; /* Standard */
     {
       opacity:0; 
       white-space: nowrap; 
-      overflow: clip; 
       max-width: 100%;
     }
   }
