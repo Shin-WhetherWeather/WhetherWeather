@@ -724,7 +724,13 @@ user-select: none; /* Standard */
 
   @media screen and (max-width: 680px)
   {
-    .navbar .title{opacity:0; white-space: nowrap; overflow: clip;}
+    .navbar .title
+    {
+      opacity:0; 
+      white-space: nowrap; 
+      overflow: clip; 
+      max-width: 100%;
+    }
   }
 
 
