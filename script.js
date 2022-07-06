@@ -56,6 +56,8 @@ function updateSlider()
       tickEach[i].classList.add("tickSelected");
     }
   }
+
+  updateSun();
 };
 
 
@@ -126,12 +128,63 @@ function cloudButtonToggle()
     buttonState++;
   }
 
+  updateSun();
+
   cloudButton.src = "CloudButton/" + buttonLinks[buttonState];
 }
 
 function changeWeather()
 {
   sprite.style.backgroundImage =  "url(Sprites/" + weatherLinks[buttonState] +"), url(Sprites/SpriteMain.jpg)";
+}
+
+
+let cloudGlow = document.createElement('div');
+cloudGlow.style.position = "absolute";
+cloudGlow.style.top = 0;
+cloudGlow.style.left = 0;
+cloudGlow.style.right = 0;
+cloudGlow.style.bottom = 0;
+cloudGlow.style.filter = "blur(24px)";
+cloudGlow.style.transform = "scale(0.85)";
+cloudGlow.style.opacity = 0;
+cloudGlow.style.borderRadius = "50%";
+cloudGlow.style.zIndex = 1;
+cloudGlow.style.pointerEvents = "none";
+cloudButton.style.zIndex = 2;
+cloudGlow.style.transition = "1s opacity";
+cloudButton.parentNode.append(cloudGlow);
+
+function updateSun()
+{
+  if(buttonState == 5)
+  {
+    if( sliderInput.value < 7 || sliderInput.value >= 19)
+    {
+
+      cloudButton.style.filter = "grayscale(100%)";
+
+      cloudGlow.style.backgroundColor = "white";
+
+      cloudGlow.style.opacity = 0.6;
+      
+
+      
+    }
+    else
+    {
+      cloudButton.style.filter = "grayscale(0%)";
+
+      cloudGlow.style.backgroundColor = "#FFE168";
+
+      cloudGlow.style.opacity = 0.6;
+    }
+  }
+  else
+  {
+    cloudButton.style.filter = "grayscale(0%)";
+    cloudGlow.style.opacity = 0;
+  }
 }
 
 

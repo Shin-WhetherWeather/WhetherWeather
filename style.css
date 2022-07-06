@@ -265,16 +265,15 @@ body, html {
     width: 100%;
     height: 10px;
     border-radius: 5px;
-    background: #d3d3d3;
-    opacity: 0.8;
+    background: #d9d9d967;
+    opacity: 0.7;
     -webkit-transition: 0.7s;
     transition: opacity 0.7s, background 0.7s;
   }
 
   #slider:hover
   {
-    background: #cccccc;
-    opacity: 1;
+    background: #ccccccFF;
   }
 
   #slider::-webkit-slider-thumb {
@@ -286,15 +285,19 @@ body, html {
     background: url('cloud.svg');
     cursor: pointer;
     transition: 0.4s;
+    opacity: 1;
   }
 
   #slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
     height: 1.3vw;
     width: calc(1.3vw*(42/24));
     border: 0;
     background: url('contrasticon.png');
     cursor: pointer;
     transition: 0.4s;
+    opacity: 1;
   }
 
   #slider::-webkit-slider-thumb:hover
@@ -311,11 +314,12 @@ body, html {
   #cloudButton
   {
     float: right;
-    padding: 8%;
     height: 8vw;
+    padding: 0;
     opacity: 0.7;
-    transition: transform 0.7s, opacity 0.7s;
+    transition: opacity 0.7s ease, transform 1s ease;
     cursor: pointer;
+    z-index: 2;
   }
 
   #cloudButton:hover
@@ -333,12 +337,11 @@ body, html {
 
   .cloudCaption
   {
+    padding: 0;
     position: absolute;
-    padding: 10px;
-    padding-left: 18px;
-    padding-right: 18px;
-    left:30px;
-    top: 36px;
+    left:54px;
+    top: 46px;
+    z-index: 3;
   }
 
   .playCaption
@@ -349,6 +352,7 @@ body, html {
     padding-right: 18px;
     right:30px;
     top: 36px;
+    
   }
 
   #playButton
@@ -387,10 +391,8 @@ body, html {
     justify-content: center;
     padding-top: 8px;
     height:55px;
-    -webkit-user-select: none; /* Safari */        
--moz-user-select: none; /* Firefox */
--ms-user-select: none; /* IE10+/Edge */
-user-select: none; /* Standard */
+    pointer-events: none;
+
   }
 
 
