@@ -46,7 +46,7 @@ sliderInput.oninput = function()
 
 function updateSlider()
 {
-  sprite.style.backgroundPosition = 2400 + 1300 - 100 * sliderInput.value + "% 0%";
+  sprite.style.backgroundPosition = 1300 - 100 * sliderInput.value + "% 0%";
 
   for(let i = 0; i < tickEach.length; i++)
   {
@@ -83,9 +83,6 @@ function sliderSlide()
 
 
 
-
-
-
 let buttonLinks = 
 [
   "Cloud.svg",
@@ -108,11 +105,14 @@ let weatherLinks =
 
 let buttonState = 5;
 
+let spriteContainer = document.getElementById("sprite");
+
 
 let cloudButton = document.getElementById("cloudButton");
 
 cloudButton.addEventListener("click",function()
 {
+  scrollToElement(spriteContainer);
   cloudButtonToggle();
   changeWeather();
 });
@@ -197,6 +197,7 @@ let playState = false;
 let animTime, then, elapsed;
 
 playButton.addEventListener("click", function(){
+  scrollToElement(spriteContainer);
   if(playState)
   {
     pauseAnimation();
