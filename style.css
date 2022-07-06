@@ -286,6 +286,8 @@ body, html {
     cursor: pointer;
     transition: 0.4s;
     opacity: 1;
+    cursor: -webkit-grab; 
+    cursor: grab;
   }
 
   #slider::-moz-range-thumb {
@@ -298,11 +300,19 @@ body, html {
     cursor: pointer;
     transition: 0.4s;
     opacity: 1;
+    cursor: -webkit-grab; 
+    cursor: grab;
   }
 
-  #slider::-webkit-slider-thumb:hover
+  #slider::-webkit-slider-thumb:hover, #slider::-moz-range-thumb:hover
   {
     transform: scale(1.2);
+  }
+
+  #slider::-webkit-slider-thumb:active
+  {
+    cursor: -webkit-grabbing; 
+    cursor: grabbing;;
   }
 
   .buttonContainer

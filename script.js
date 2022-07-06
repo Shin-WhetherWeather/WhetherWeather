@@ -665,6 +665,9 @@ logo.addEventListener("click", function () {
 
 
 
+
+
+
 function scrollFunction() {
   closeMenu();
 
@@ -685,7 +688,11 @@ function scrollFunction() {
     
   }
 
-  
+  const difference = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollposition = document.documentElement.scrollTop; 
+
+  const distanceBottom = difference - scrollposition;
+
 
   navElements.forEach((element) => {
 
@@ -693,7 +700,7 @@ function scrollFunction() {
 
     switch(true)
     {
-      case (window.pageYOffset >= -500 || window.pageYOffset >= -500) && (window.pageYOffset < 900 || window.pageYOffset < 900):
+      case (window.pageYOffset >= -500 && window.pageYOffset < 900) || (distanceBottom < 250):
         element.style.opacity = 1;
         element.style.padding = "28px 64px";
         logo.style.height = "38px";
@@ -719,7 +726,7 @@ function scrollFunction() {
         
         break;
 
-      case (window.pageYOffset >= 900 || window.pageYOffset >= 900) && (window.pageYOffset < 2500 || window.pageYOffset < 2500):
+      case (window.pageYOffset >= 900 && window.pageYOffset < 2500) || (distanceBottom >= 250 && distanceBottom <= 1440):
         element.style.opacity = 0;
         element.style.padding = 0;
         element.style.pointerEvents = "none";
@@ -749,7 +756,7 @@ function scrollFunction() {
 
         break;
 
-      case (window.pageYOffset >= 2500 || window.pageYOffset >= 2500):
+      case (window.pageYOffset >= 2500) && (distanceBottom > 1440):
         element.style.opacity = 0;
         element.style.padding = "64px 64px";
         logo.style.pointerEvents = "auto";
