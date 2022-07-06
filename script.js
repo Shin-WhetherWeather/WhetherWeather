@@ -187,6 +187,47 @@ function pauseAnimation()
 }
 
 
+let options = {
+  rootMargin: '-150px',
+  threshold: 0.25
+  }
+  
+  let options2 = {
+    rootMargin: '-20px',
+    threshold: 0.25
+    }
+
+
+
+
+
+let observer;
+
+let observer2;
+
+
+
+
+
+function loaded()
+{
+  console.log("loaded");
+  sections.forEach((section, index) => {
+    observer.observe(section)
+    })
+    
+    textSections.forEach((section, index) => {
+      observer2.observe(section)
+      })
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -213,7 +254,25 @@ window.onload = function()
     );
 
 
-setTimeout(loaded, 1200);
+    if ('IntersectionObserver' in window) {
+
+      observer = new IntersectionObserver(callback, options);
+
+      observer2 = new IntersectionObserver(callback, options2);
+
+
+      setTimeout(loaded, 1200);
+
+    } else {
+      entries.forEach((entry) => 
+      {
+        var target = entry.target;
+    
+            target.classList.add("is-inview");
+      })
+    }
+
+
 
 
 
@@ -665,15 +724,7 @@ let sections = document.querySelectorAll('.overlay');
 
 let textSections = document.querySelectorAll('.textSection');
 
-let options = {
-rootMargin: '-150px',
-threshold: 0.25
-}
 
-let options2 = {
-  rootMargin: '-20px',
-  threshold: 0.25
-  }
 
 
 
@@ -690,34 +741,9 @@ var callback = (entries) =>
   })
 }
 
-var observer = new IntersectionObserver(callback, options)
-
-let observer2 = new IntersectionObserver(callback, options2)
 
 
-if ('IntersectionObserver' in window) {
-} else {
-  // make lazy loading elements to be loaded right away
-  entries.forEach((entry) => 
-  {
-    var target = entry.target;
 
-        target.classList.add("is-inview");
-  })
-}
-
-
-function loaded()
-{
-  console.log("loaded");
-  sections.forEach((section, index) => {
-    observer.observe(section)
-    })
-    
-    textSections.forEach((section, index) => {
-      observer2.observe(section)
-      })
-}
 
 
 
