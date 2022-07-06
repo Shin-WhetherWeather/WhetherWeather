@@ -693,6 +693,18 @@ var observer = new IntersectionObserver(callback, options)
 let observer2 = new IntersectionObserver(callback, options2)
 
 
+if ('IntersectionObserver' in window) {
+} else {
+  // make lazy loading elements to be loaded right away
+  entries.forEach((entry) => 
+  {
+    var target = entry.target;
+
+        target.classList.add("is-inview");
+  })
+}
+
+
 function loaded()
 {
   console.log("loaded");
