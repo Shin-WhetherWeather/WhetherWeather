@@ -282,7 +282,7 @@ body, html {
     height: 1.3vw;
     width: calc(1.3vw*(42/24));
     border: 0;
-    background: url('cloud.svg');
+    background: url('Icons/cloud.svg');
     cursor: pointer;
     transition: 0.4s;
     opacity: 1;
@@ -296,7 +296,7 @@ body, html {
     height: 1.3vw;
     width: calc(1.3vw*(42/24));
     border: 0;
-    background: url('contrasticon.png');
+    background: url('Icons/cloud.svg');
     cursor: pointer;
     transition: 0.4s;
     opacity: 1;
@@ -304,7 +304,7 @@ body, html {
     cursor: grab;
   }
 
-  #slider::-webkit-slider-thumb:hover, #slider::-moz-range-thumb:hover
+  #slider::-webkit-slider-thumb:hover
   {
     transform: scale(1.2);
   }

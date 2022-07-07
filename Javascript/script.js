@@ -1,3 +1,9 @@
+/*
+###########################################################
+##################   Newsletter stuff   ###################
+###########################################################
+*/
+
 
 
 window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
@@ -18,18 +24,13 @@ window.translation = {
   }
 };
 
-var AUTOHIDE = Boolean(0);
 
 
-var docWidth = document.documentElement.offsetWidth;
-[].forEach.call(
-  document.querySelectorAll('*'),
-  function(el) {
-    if (el.offsetWidth > docWidth) {
-      console.log(el);
-    }
-  }
-);
+/*
+###########################################################
+#############   Cloud interactive widget   ################
+###########################################################
+*/
 
 
 
@@ -241,6 +242,21 @@ function pauseAnimation()
 }
 
 
+
+
+
+
+
+
+
+
+/*
+###########################################################
+##################   Onload functions   ###################
+###########################################################
+*/
+
+
 let options = {
   rootMargin: '-150px',
   threshold: 0.25
@@ -277,20 +293,9 @@ function loaded()
 
 
 
-
-
-
-
-
-
-
-
-
-
 window.onload = function()
 {
-  topFunction();
-  updateSlider()
+  updateSlider();
 
 
   cloudOverlayR.addEventListener("mouseover", 
@@ -326,13 +331,17 @@ window.onload = function()
       })
     }
 
-
-
-
-
-
 };
 
+
+
+
+
+/*
+###########################################################
+####################   Loading cover   ####################
+###########################################################
+*/
 
 
 let cover = document.getElementById("block");
@@ -363,10 +372,6 @@ if(LOCAL_TOKEN == null || now.getTime() > LOCAL_TOKEN.expiry)   //token doesn't 
 }else
 {
   cover.remove();
-  enableScroll();  
-  enableScroll();
-  enableScroll();
-
 }
 
 
@@ -395,7 +400,11 @@ if(LOCAL_TOKEN == null || now.getTime() > LOCAL_TOKEN.expiry)   //token doesn't 
 
 
 
-
+/*
+###########################################################
+##############   Newsletter cloud overlay   ###############
+###########################################################
+*/
 
 
 
@@ -463,7 +472,11 @@ function moveCloudsLeft()
 
 
 
-
+/*
+###########################################################
+####################   Scroll reveal   ####################
+###########################################################
+*/
 
 
 
@@ -535,48 +548,4 @@ resizewatcher.observe(cover);
 
 
 
-
-
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
-function preventDefault(e) {
-  e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
-  }
-}
-
-// modern Chrome requires { passive: false } when adding event
-var supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () { supportsPassive = true; } 
-  }));
-} catch(e) {}
-
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-// call this to Disable
-function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-
-// call this to Enable
-function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-
-
+topFunction();
