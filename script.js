@@ -42,7 +42,6 @@ let tickEach = document.getElementById("tickTexts").children;
 sliderInput.oninput = function()
 {
   updateSlider();
-  navigator.vibrate(500);
 };
 
 function updateSlider()
