@@ -800,57 +800,6 @@ p
 
 
 
-  /*
-  ###################################################
-  ##################     MOBILE     #################
-  ###################################################
-  */
-
-  @media only screen and (max-width:768px)
-{
-
-  /* h2
-  {
-    font-size: 24px !important;
-  }
-
-  p
-  {
-    font-size: 16px !important;
-    line-height: 18px !important;
-  } */
-
-  .title
-  {
-    letter-spacing: 2px;
-  }
-
-  #slider::-webkit-slider-thumb {
-    height: 4.2vw;
-    width: calc(4.2vw*(42/24));
-  }
-
-  #slider::-moz-range-thumb {
-    height: 4.2vw;
-    width: calc(4.2vw*(42/24));
-  }
-
-  .tickContainer
-  {
-    display: none;
-  }
-
-  .captionL, .captionR
-  {
-    font-size: 3.5vw;
-  }
-
-
-
-
-
-
-}
 
   /*
   ###################################################
@@ -876,7 +825,7 @@ p
 
   p
   {
-    font-size: 2vw;
+    font-size: 2.5vw;
     line-height: 3vw;
   }
 
@@ -968,6 +917,65 @@ p
 
 
 }
+
+
+
+ /*
+  ###################################################
+  ##################     MOBILE     #################
+  ###################################################
+  */
+
+  @media only screen and (max-width:768px)
+{
+  h2
+  {
+    font-size: 4vw;
+  }
+
+  p
+  {
+    font-size: 3.2vw;
+    line-height: 3.8vw;
+  }
+
+
+  .title
+  {
+    letter-spacing: 2px;
+  }
+
+  #slider::-webkit-slider-thumb {
+    height: 4.2vw;
+    width: calc(4.2vw*(42/24));
+  }
+
+  #slider::-moz-range-thumb {
+    height: 4.2vw;
+    width: calc(4.2vw*(42/24));
+  }
+
+  .tickContainer
+  {
+    display: none;
+  }
+
+  .captionL, .captionR
+  {
+    font-size: 3.5vw;
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
 
 
   /*
