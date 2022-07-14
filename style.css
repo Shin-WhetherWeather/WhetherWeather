@@ -234,6 +234,41 @@ p
 
 
 
+.colourText
+{
+  color: #fff;
+  
+  animation-name: colourText;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-start;
+}
+
+
+@keyframes colourText
+{
+  0% {    text-shadow:0 0 8px #F598A2}
+  25% {   text-shadow:0 0 8px #f9c939}
+  50% {   text-shadow:0 0 8px #edf7f4}
+  75% {   text-shadow:0 0 8px #7f90cc}
+  100% {  text-shadow:0 0 8px #F598A2} 
+
+
+  /* 0% {    color: #F598A2}
+  25% {   color: #f9c939}
+  50% {   color: #edf7f4}
+  75% {   color: #7f90cc}
+  100% {  color: #F598A2} */
+}
+
+
+
+
+
+
+
+
+
   .responsive   {
       width: 100%;
       max-width: 100%;

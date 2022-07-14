@@ -370,6 +370,13 @@ window.onload = function()
 {
   updateSlider();
 
+  if (window.matchMedia('(min-width: 1440px)').matches)
+  {
+    parallaxScroll();
+  }
+
+  
+
 
   cloudOverlayR.addEventListener("mouseover", 
     function()
@@ -639,18 +646,44 @@ let textBoxes = document.querySelectorAll(".textBoxR, .textBoxL");
 
 if (window.matchMedia('(min-width: 1440px)').matches)
 {
-  document.addEventListener("scroll", function(){
-    textBoxes.forEach((element) => 
-      {
-        let offsetAmount = (window.pageYOffset - $(element).offset().top)  * 0.1 + 60;
-        offsetAmount = Math.max(offsetAmount, 0);
-        offsetAmount = Math.min(offsetAmount,100);
-  
-  
-        element.style.transform = `translateY(${offsetAmount}px)`;
-      });
-  });
+  document.addEventListener("scroll", 
+    parallaxScroll);
 }
 
 
+window.addEventListener("resize", function(){
+  if (window.matchMedia('(max-width: 1440px)').matches)
+  {
+    document.removeEventListener("scroll", 
+      parallaxScroll
+      );
+
+    textBoxes.forEach((element) => 
+    {
+      element.style.transform = "";
+      console.log("reset");
+    }
+    
+    
+    );
+  }else if(window.matchMedia('(min-width: 1440px)').matches)
+  {
+    document.addEventListener("scroll", 
+    parallaxScroll);
+  }
+});
+
+
+function parallaxScroll()
+{
+  textBoxes.forEach((element) => 
+  {
+    let offsetAmount = (window.pageYOffset - $(element).offset().top)  * 0.1 + 60;
+    offsetAmount = Math.max(offsetAmount, 0);
+    offsetAmount = Math.min(offsetAmount,100);
+
+
+    element.style.transform = `translateY(${offsetAmount}px)`;
+  });
+}
 
