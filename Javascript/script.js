@@ -245,6 +245,79 @@ function pauseAnimation()
 
 
 
+let rows = document.querySelectorAll('.row');
+let scrollBounds = [];
+
+rows.forEach((row, index) =>
+{
+  let xxx = $(row).offset().top;
+  console.log(xxx);
+});
+
+
+
+
+let isInElement = false;
+let rowIndex = 0;
+let autoScroll = true;
+
+let lastScroll = 0;
+
+document.addEventListener("scroll", function(){
+  if(window.pageYOffset > lastScroll)
+  {
+    scrollToRow();
+    resetScrollTo();
+  }
+  lastScroll = window.pageYOffset;
+
+
+});
+
+
+function scrollToRow()
+{
+
+
+  rows.forEach((row, index) =>
+    {
+      if(window.pageYOffset >= $(row).offset().top - 400 && window.pageYOffset < $(row).offset().top - 100)
+      {
+        if(isInElement == false)
+        {
+          scrollToScrollToElement(index);
+          rowIndex = index;
+          isInElement = true;
+        }
+      }
+
+    }
+  );
+
+}
+
+function resetScrollTo()
+{
+  if(isInElement)
+  {
+    if(window.pageYOffset < $(rows[rowIndex]).offset().top - 600 || window.pageYOffset > $(rows[rowIndex]).offset().top + 100)
+    {
+      isInElement = false;
+    }
+  }
+}
+
+
+function scrollToScrollToElement(index)
+{
+  if(autoScroll)
+  {
+    scrollToElement(rows[index], 800);
+  }
+    
+};
+
+
 
 
 
@@ -263,8 +336,8 @@ let options = {
   }
   
   let options2 = {
-    rootMargin: '-20px',
-    threshold: 0.25
+    rootMargin: '-100px',
+    threshold: 0.5
     }
 
 
@@ -432,9 +505,10 @@ function moveCloudsRight()
 {
   console.log("move");
   cloudOverlayR.style.position = "absolute";
-  cloudOverlayR.style.left = "1000px";
+  cloudOverlayR.style.left = "2000px";
   console.log(parseInt(cloudOverlayR.style.left));
   cloudOverlayR.style.opacity = 0;
+  cloudOverlayR.style.pointerEvents = "none";
 
 }
 
@@ -445,6 +519,7 @@ function moveCloudsLeft()
   cloudOverlayL.style.left = "-1000px";
   console.log(parseInt(cloudOverlayR.style.left));
   cloudOverlayL.style.opacity = 0;
+  cloudOverlayL.style.pointerEvents = "none";
 
 }
 

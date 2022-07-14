@@ -1,14 +1,50 @@
+let scrolling = false;
+
+
 function topFunction() {
- 
-    $('html, body').animate({scrollTop:0}, 'slow');
-    $(window).animate({scrollTop:0}, 'slow');
+
+  if(scrolling == false)
+    {
+    scrolling = true;
+    $('html, body').animate(
+    {scrollTop:0}, 
+    {
+      duration: 500,
+      complete: function()
+      {
+        scrolling = false;
+      }
+    }
+    );
+
+
+
+
+    $(window).animate(
+      {scrollTop:0},
+      {
+        duration: 500,
+        complete: function()
+        {
+          scrolling = false;
+        }
+      }
+      );
+
+
+
     console.log("scroll top");
+    }
   }
 
-  function scrollToElement(el)
+
+
+  function scrollToElement(el, speed = 400)
   {
 
-
+    if(scrolling == false)
+    {
+    scrolling = true;
     let windowWidth = window.innerWidth;
     let windowHeight = window.innerHeight;
     
@@ -19,18 +55,44 @@ function topFunction() {
       topPad = (windowHeight - windowWidth)/2;
     }else
     {
-      topPad = (windowHeight - el.getBoundingClientRect().width)/2;
+      topPad = (windowHeight - el.getBoundingClientRect().height)/2;
       console.log(el.offsetHeight);
     }
 
 
 
-    $('html, body').animate({scrollTop:
+    $('html, body').animate(
+      {scrollTop:
       ($(el).offset().top - topPad)
-    }, 400);
+    }, 
 
-    $(window).animate({scrollTop:
+    {
+      duration: speed,
+      complete: function()
+      {
+        scrolling = false;
+      }
+    }
+
+    );
+
+    $(window).animate(
+      {scrollTop:
       ($(el).offset().top - topPad)
-    }, 400);
+    }, 
+
+    {
+      duration: speed,
+      complete: function()
+      {
+        scrolling = false;
+      }
+    }
+    
+    );
+
+    }
+
   }
-  
+
+

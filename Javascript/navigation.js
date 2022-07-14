@@ -181,9 +181,6 @@ navSpacersLarge.forEach((element) =>
 
 let mainBody = document.getElementById('main');
 
-mainBody.addEventListener("scroll", function () {
-  scrollFunction();
-});
 
 document.addEventListener("scroll", function(){
   scrollFunction();
