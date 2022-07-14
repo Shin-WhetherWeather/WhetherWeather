@@ -263,16 +263,16 @@ let autoScroll = true;
 
 let lastScroll = 0;
 
-document.addEventListener("scroll", function(){
-  if(window.pageYOffset > lastScroll)
-  {
-    scrollToRow();
-    resetScrollTo();
-  }
-  lastScroll = window.pageYOffset;
+// document.addEventListener("scroll", function(){
+//   if(window.pageYOffset > lastScroll)
+//   {
+//     scrollToRow();
+//     resetScrollTo();
+//   }
+//   lastScroll = window.pageYOffset;
 
 
-});
+// });
 
 
 function scrollToRow()
@@ -623,3 +623,34 @@ resizewatcher.observe(cover);
 
 
 topFunction();
+
+
+
+
+/*
+###########################################################
+###################   Scroll Parallax   ###################
+###########################################################
+*/
+
+let textBoxes = document.querySelectorAll(".textBoxR, .textBoxL");
+
+
+
+if (window.matchMedia('(min-width: 1440px)').matches)
+{
+  document.addEventListener("scroll", function(){
+    textBoxes.forEach((element) => 
+      {
+        let offsetAmount = (window.pageYOffset - $(element).offset().top)  * 0.1 + 60;
+        offsetAmount = Math.max(offsetAmount, 0);
+        offsetAmount = Math.min(offsetAmount,100);
+  
+  
+        element.style.transform = `translateY(${offsetAmount}px)`;
+      });
+  });
+}
+
+
+
