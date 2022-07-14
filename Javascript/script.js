@@ -337,7 +337,7 @@ let options = {
   
   let options2 = {
     rootMargin: '-100px',
-    threshold: 0.5
+    threshold: 0.25
     }
 
 
@@ -575,7 +575,6 @@ var callback = (entries) =>
     var target = entry.target;
       if (entry.intersectionRatio >= 0.1) 
       {
-        console.log("inview");
         target.classList.add("is-inview");
       } 
   })
