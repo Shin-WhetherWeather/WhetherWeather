@@ -648,6 +648,7 @@ if (window.matchMedia('(min-width: 1440px)').matches)
 {
   document.addEventListener("scroll", 
     parallaxScroll);
+  parallaxScroll;
 }
 
 
