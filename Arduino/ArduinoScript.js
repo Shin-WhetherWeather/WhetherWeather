@@ -1,5 +1,6 @@
 
 
+
 let moveButtons = document.querySelectorAll(".moveButton");
 
 let selectedSpeed = 1;
@@ -26,26 +27,43 @@ function myFunction(speed)
     {
         case 1:
         case "1":
-            speed1.style.backgroundColor = "DDD";
+            speed1.firstChild.style.backgroundColor = "CCD";
+            speed2.firstChild.style.backgroundColor = "";
+            speed3.firstChild.style.backgroundColor = "";
+            speed4.firstChild.style.backgroundColor = "";
         break;
 
         case 2:
         case "2":
-            speed2.style.backgroundColor = "DDD";
+            speed1.firstChild.style.backgroundColor = "";
+            speed2.firstChild.style.backgroundColor = "CCD";
+            speed3.firstChild.style.backgroundColor = "";
+            speed4.firstChild.style.backgroundColor = "";
         break;
 
         case 4:
         case "4":
-            speed3.style.backgroundColor = "DDD";
+            speed1.firstChild.style.backgroundColor = "";
+            speed2.firstChild.style.backgroundColor = "";
+            speed3.firstChild.style.backgroundColor = "CCD";
+            speed4.firstChild.style.backgroundColor = "";
         break;
 
         case 8:
         case "8":
-            speed4.style.backgroundColor = "DDD";
+            speed1.firstChild.style.backgroundColor = "";
+            speed2.firstChild.style.backgroundColor = "";
+            speed3.firstChild.style.backgroundColor = "";
+            speed4.firstChild.style.backgroundColor = "CCD";
         break;
     }
 
+    LOCAL_TOKEN = speed;
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(LOCAL_TOKEN));
+
+
 }
+
 
 
 
