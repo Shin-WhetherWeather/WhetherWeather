@@ -27,7 +27,7 @@ function myFunction(speed)
     {
         case 1:
         case "1":
-            speed1.firstChild.style.backgroundColor = "CCD";
+            speed1.firstChild.style.backgroundColor = "#CCD";
             speed2.firstChild.style.backgroundColor = "";
             speed3.firstChild.style.backgroundColor = "";
             speed4.firstChild.style.backgroundColor = "";
@@ -36,7 +36,7 @@ function myFunction(speed)
         case 2:
         case "2":
             speed1.firstChild.style.backgroundColor = "";
-            speed2.firstChild.style.backgroundColor = "CCD";
+            speed2.firstChild.style.backgroundColor = "#CCD";
             speed3.firstChild.style.backgroundColor = "";
             speed4.firstChild.style.backgroundColor = "";
         break;
@@ -45,7 +45,7 @@ function myFunction(speed)
         case "4":
             speed1.firstChild.style.backgroundColor = "";
             speed2.firstChild.style.backgroundColor = "";
-            speed3.firstChild.style.backgroundColor = "CCD";
+            speed3.firstChild.style.backgroundColor = "#CCD";
             speed4.firstChild.style.backgroundColor = "";
         break;
 
@@ -54,7 +54,7 @@ function myFunction(speed)
             speed1.firstChild.style.backgroundColor = "";
             speed2.firstChild.style.backgroundColor = "";
             speed3.firstChild.style.backgroundColor = "";
-            speed4.firstChild.style.backgroundColor = "CCD";
+            speed4.firstChild.style.backgroundColor = "#CCD";
         break;
     }
 
