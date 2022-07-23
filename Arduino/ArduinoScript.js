@@ -50,8 +50,8 @@ function myFunction(speed)
             speed4.firstChild.style.backgroundColor = "";
         break;
 
-        case 9:
-        case "9":
+        case 7:
+        case "7":
             speed1.firstChild.style.backgroundColor = "";
             speed2.firstChild.style.backgroundColor = "";
             speed3.firstChild.style.backgroundColor = "";
