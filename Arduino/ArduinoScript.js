@@ -1,6 +1,7 @@
 
 
 
+
 let moveButtons = document.querySelectorAll(".moveButton");
 
 let selectedSpeed = 1;
@@ -20,7 +21,7 @@ function myFunction(speed)
 
         code = code.substring(0, 3) + speed.toString();
 
-        element.href = "/" + code;
+        element.href = "/M" + code;
     });
 
     switch(speed)
@@ -49,8 +50,8 @@ function myFunction(speed)
             speed4.firstChild.style.backgroundColor = "";
         break;
 
-        case 8:
-        case "8":
+        case 9:
+        case "9":
             speed1.firstChild.style.backgroundColor = "";
             speed2.firstChild.style.backgroundColor = "";
             speed3.firstChild.style.backgroundColor = "";
@@ -80,4 +81,67 @@ else
 {
     selectedSpeed = LOCAL_TOKEN;
     myFunction(selectedSpeed);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+let colorpicker = document.getElementById("colorpicker");
+
+let slider = document.getElementById("slider");
+
+colorpicker.addEventListener("change", function()
+{
+    backlightChange();
+});
+
+
+
+
+
+slider.addEventListener("change", function()
+{
+    backlightChange();
+});
+
+function backlightChange()
+{
+    let backColor = colorpicker.value.substring(1);;
+    let brightness = slider.value;
+
+    LOCAL_TOKEN_COLOR = '#' + backColor + brightness;
+
+    localStorage.setItem(LOCAL_KEY_COLOR, JSON.stringify(LOCAL_TOKEN_COLOR));
+
+
+    window.location.href = '/R' + backColor + brightness;
+    
+}
+
+
+
+
+
+const LOCAL_KEY_COLOR = "selectedColor";
+
+let LOCAL_TOKEN_COLOR = JSON.parse(localStorage.getItem(LOCAL_KEY_COLOR));
+
+if(LOCAL_TOKEN_COLOR == null)
+{
+    LOCAL_TOKEN_COLOR = "#FFFFFF1";
+    localStorage.setItem(LOCAL_KEY_COLOR, JSON.stringify(LOCAL_TOKEN_COLOR));
+}
+else
+{
+    colorpicker.value = LOCAL_TOKEN_COLOR.substring(0,7);
+    slider.value = parseInt(LOCAL_TOKEN_COLOR.charAt(LOCAL_TOKEN_COLOR.length-1));
 }

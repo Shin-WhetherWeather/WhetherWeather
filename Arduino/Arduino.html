@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel='stylesheet' href='https://whether-weather.com/Arduino/Arduino.css'>
+        <link rel='stylesheet' href='Arduino.css'>
     </head>
     
 
@@ -17,7 +17,7 @@
 
         <a id = 'speed3' onclick='myFunction(4)'><button>4</button></a>
 
-        <a id = 'speed4' onclick='myFunction(8)'><button>8</button></a>
+        <a id = 'speed4' onclick='myFunction(9)'><button>9</button></a>
 
     </div>
 
@@ -55,6 +55,14 @@
 
     </div>
 
+    <div class = 'row'>
+
+        <input type="color" id="colorpicker" value="#0000ff">
+
+        <div class = 'mid'>Backlight</div>
+
+        <input type="range" min="1" max="9" value="1" step="1" id="slider">
+    </div>
 
 
 
@@ -62,7 +70,8 @@
 
 
 
-    <script src = 'https://whether-weather.com/Arduino/ArduinoScript.js'></script>
+
+    <script src = 'ArduinoScript.js'></script>
 
 
 </body>

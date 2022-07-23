@@ -12,6 +12,7 @@ html
     padding-bottom: 30px;
     padding-left: 5vw;
     padding-right: 5vw;
+
 }
 
 div
@@ -19,16 +20,19 @@ div
     display: inline-block;
 }
 
-button
+button, #colorpicker, #slider
 {
     height: 100px;
     width: 15vw;
+    vertical-align: middle;
 }
 
 .mid
 {
     width: 15vw;
     margin: 0;
+    height: 100px;
+    line-height: 100%;
 }
 
 a
