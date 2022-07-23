@@ -122,8 +122,19 @@ function backlightChange()
 
     localStorage.setItem(LOCAL_KEY_COLOR, JSON.stringify(LOCAL_TOKEN_COLOR));
 
+    let red = parseInt(backColor.substring(0,2),16);
+    red = String(red).padStart(3, '0');
 
-    window.location.href = '/R' + backColor + brightness;
+    let green = parseInt(backColor.substring(2,4),16);
+    green = String(green).padStart(3, '0');
+
+    let blue = parseInt(backColor.substring(4,6),16);
+    blue = String(blue).padStart(3, '0');
+
+    console.log(red + green + blue);
+
+
+    window.location.href = '/R' + red + green + blue + brightness;
     
 }
 
