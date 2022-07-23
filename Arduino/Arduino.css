@@ -25,7 +25,7 @@ div
 
 button, #colorpicker, #slider
 {
-    height: 100px;
+    height: 75px;
     width: 15vw;
     vertical-align: middle;
 }
