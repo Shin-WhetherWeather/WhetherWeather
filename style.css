@@ -130,13 +130,6 @@ strong
     filter:invert(100%);
   }
 
-  .navbarElement:hover,
-  .navbarElementGroup .material-icons.menuIcon:hover
-  {
-    filter: invert(100%);
-    background: #000;
-    pointer-events: auto;
-  }
 
 
   .navbarLogo {
@@ -907,10 +900,6 @@ p
       height:12vw;
     }
 
-    .cloudContainer
-    {
-      /* background: none; */
-    }
 
 
     .inputButton, .inputWide
