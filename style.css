@@ -131,6 +131,14 @@ strong
   }
 
 
+  .navbarElement:hover
+  {
+    filter: invert(100%);
+    background: #000;
+    pointer-events: auto;
+  }
+
+
 
   .navbarLogo {
       float:left;
