@@ -156,3 +156,83 @@ else
     colorpicker.value = LOCAL_TOKEN_COLOR.substring(0,7);
     slider.value = parseInt(LOCAL_TOKEN_COLOR.charAt(LOCAL_TOKEN_COLOR.length-1));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let colorpicker2 = document.getElementById("colorpicker2");
+
+let slider2 = document.getElementById("slider2");
+
+colorpicker2.addEventListener("change", function()
+{
+    backlightChange2();
+});
+
+
+
+
+
+slider2.addEventListener("change", function()
+{
+    backlightChange2();
+});
+
+function backlightChange2()
+{
+    let backColor = colorpicker2.value.substring(1);;
+    let brightness = slider2.value;
+
+    LOCAL_TOKEN_COLOR_2 = '#' + backColor + brightness;
+
+    localStorage.setItem(LOCAL_KEY_COLOR_2, JSON.stringify(LOCAL_TOKEN_COLOR_2));
+
+    let red = parseInt(backColor.substring(0,2),16);
+    red = String(red).padStart(3, '0');
+
+    let green = parseInt(backColor.substring(2,4),16);
+    green = String(green).padStart(3, '0');
+
+    let blue = parseInt(backColor.substring(4,6),16);
+    blue = String(blue).padStart(3, '0');
+
+    console.log(red + green + blue);
+
+
+    window.location.href = '/B' + red + green + blue + brightness;
+    
+}
+
+
+
+
+
+const LOCAL_KEY_COLOR_2 = "selectedColor2";
+
+let LOCAL_TOKEN_COLOR_2 = JSON.parse(localStorage.getItem(LOCAL_KEY_COLOR_2));
+
+if(LOCAL_TOKEN_COLOR_2 == null)
+{
+    LOCAL_TOKEN_COLOR_2 = "#FFFFFF1";
+    localStorage.setItem(LOCAL_KEY_COLOR_2, JSON.stringify(LOCAL_TOKEN_COLOR_2));
+}
+else
+{
+    colorpicker2.value = LOCAL_TOKEN_COLOR_2.substring(0,7);
+    slider2.value = parseInt(LOCAL_TOKEN_COLOR_2.charAt(LOCAL_TOKEN_COLOR_2.length-1));
+}

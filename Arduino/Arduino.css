@@ -23,7 +23,7 @@ div
     display: inline-block;
 }
 
-button, #colorpicker, #slider
+button, #colorpicker, #slider, #slider2, #colorpicker2
 {
     height: 75px;
     width: 15vw;
